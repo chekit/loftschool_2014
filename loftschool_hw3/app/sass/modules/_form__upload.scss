@@ -1,0 +1,83 @@
+.form__upload-block {
+	margin: 0 0 24px;
+
+	@at-root .block--noborder & {
+		margin: 0 10px 25px;
+	}
+}
+
+.form--upload {
+	.form__block {
+		padding-bottom: 5px;
+	}
+
+	.block--noborder {
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.upload-block__wrap {
+	position: relative;
+	height: 27px;
+	cursor: pointer;
+}	
+
+.upload-block__style {
+	position: relative;
+	height: 25px;
+	line-height: 25px;
+	width: 220px;
+}
+
+.input--upload {	
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	width: $w-g-s - 2*20px;
+	height: 25px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.style__input {
+	float: left;
+	padding: 0 5px;
+	width: 180px - 2*5px;
+	height: 25px;
+	border-right: none;
+	border-radius: 3px 0 0 3px;
+	color: color('input-color');
+	font-size: 1.2rem;
+	line-height: 25px;
+
+	@at-root .loaded & {
+		color: color('deep-blue');
+		font-weight: bold;
+	}
+}
+
+.style__error {
+	position: absolute;
+	right: 100%;
+	background-color: color('red');
+	margin-right: 15px;
+	padding: 0 10px;
+	height: 100%;
+	color: white;
+	font-size: 1.2rem;
+	white-space: nowrap;
+
+	&:after {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 13px 0 12px 12px;
+		border-color: transparent transparent transparent color('red');
+		content: '';
+	}
+}

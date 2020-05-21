@@ -1,0 +1,54 @@
+/*======================
+	BUTTONS (START)
+=======================*/
+.form-block__btn {
+	margin: 0 0 3px; // for box-shadow
+	width: (107/263)*100%;
+	height: 31px;
+	border-radius: 4px;
+	color: white;
+	font-size: 1.6rem;
+	line-height: 33px;
+	text-align: center;
+	transition: background-color .25s ease-in-out;
+
+	@at-root .item--center & {
+		float: none !important;
+		display: inline-block;
+	}
+	
+	@media screen and (min-width: breakpoint(tablet)) {
+		font-size: 1.9rem;
+	}
+}
+
+.btn--blue {
+	box-shadow: 0 2px 0 color('darkblue');
+	background-color: color('lightblue');
+	border-bottom: 1px solid #44bfdb;
+
+	&:hover {
+		background-color: color('cyan');
+	}
+
+	@at-root .item--buttons & {
+		float: left;
+	}
+}
+
+.btn--gray {
+	box-shadow: 0 2px 0 color('deeppurple');
+	background-color: color('darkpurple');
+	border-bottom: 1px solid #7b92a8;
+
+	&:hover {
+		background-color: color('grey');
+	}
+
+	@at-root .item--buttons & {
+		float: right;
+	}
+}
+/*======================
+	BUTTONS (END)
+=======================*/

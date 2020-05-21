@@ -1,0 +1,10 @@
+#footer {
+	height: $footer-height;
+	background: transparent url('../../app/images/footer-pattern.jpg') left top repeat;
+
+	.wrapper {
+		margin-top: 0;
+		margin-bottom: 0;
+		height: inherit;
+	}
+}

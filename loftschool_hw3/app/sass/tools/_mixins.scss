@@ -1,0 +1,32 @@
+//===FONT FAMILY
+//Roboto Light
+@mixin robotolight($font-size, $line-height: 1em) {
+	font-family: $ff_robotolight;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+//Roboto Medium
+@mixin robotomedium($font-size, $line-height: 1em) {
+	font-family: $ff_robotomedium;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+//Segou UI
+@mixin segoeuil($font-size, $line-height: 1em) {
+	font-family: $ff_segoeuil;
+	font-size: $font-size;
+	line-height: $line-height;
+}
+//Fira Sans
+@mixin fira_sanslight($font-size, $line-height: 1em) {
+  font-family: $ff_firasans;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+//Sprite
+@mixin graphics($pos-x, $pos-y) {
+  background-image: url(../images/graphics.png);
+  background-repeat: no-repeat;
+  background-position: $pos-x $pos-y;
+}

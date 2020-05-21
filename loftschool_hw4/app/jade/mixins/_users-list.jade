@@ -1,0 +1,18 @@
+- var count = 0
+
+mixin users-list(num)
+	while count < num
+		ul.contacts__list
+			li.list__item.item--num #{count}
+			li.list__item.item--image
+				img&attributes({
+					class: 'item__image',
+					src: 'images/thumb-small.jpg',
+					alt: 'Имя фамилия'
+				})
+			li.list__item.item--fullname
+				span.item--name Anton&nbsp;
+				span.item--surname Cherepov
+			li.list__item.item--phone +7 911 234 56 66
+			li.list__item.item--email chekitdnb@gmail.com
+		- var k = count++

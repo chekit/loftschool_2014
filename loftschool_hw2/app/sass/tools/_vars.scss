@@ -1,0 +1,32 @@
+$main-width: 1000px;
+$aside-width: 230px;
+$content-width: 740px;
+$footer-height: 238px;
+$footer-block-width: 230px;
+
+$margin: 10px;
+$padding: 10px;
+
+$fonts: (
+	elektraLight: "elektra_light_proregular",
+	elektraLightBold: "elektra_light_probold",
+	elektraMedium: "elektra_medium_proregular",
+	elektraMediumItalic: "elektra_medium_proitalic"
+);
+
+$colors: (
+	'extralightgray' : #f7f7f7,
+	'lightgray'		 : #f4f6f9,
+	'lightblue'		 : #dae1eb,
+	'blue'			 : #00b9fe,
+	'darkblue'		 : #5c7b98,
+	'purple'		 : #613993,
+	'error'			 : #ff5c68,
+	'error-border' 	 : #933A04,
+	'positive'		 : #6FAE1F
+);
+
+$slider: (
+	height: 300px,
+	description_height: 76px
+);

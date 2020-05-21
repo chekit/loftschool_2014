@@ -1,0 +1,9 @@
+#Folders
+app/bower_components/
+node_modules/
+.tmp/
+.sass-cache/
+
+#Files
+npm-debug.log
+.sublime-gulp.cache

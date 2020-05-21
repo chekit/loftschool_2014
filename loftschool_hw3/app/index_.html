@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title> Watermark App - Группа №2</title>
+		<meta name="description" content="">
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="css/styles.min.css">
+</head>
+	<body><!--[if lt IE 8]>
+		<p class="browsehappy">
+			You are using an <strong>outdated</strong> browser.
+			Please <a href="http://browsehappy.com/">upgrade your browser</a>
+			to improve your experience.
+		</p><![endif]-->
+		<!--Global Container-->
+		<div class="container">
+			<!--Share Buttons and Language Buttons-->
+			<div class="container__globals">
+				<ul class="globals__lang">
+					<li class="lang__item">
+						<button class="globals__btn">Рус</button>
+						<button class="globals__btn">Eng</button>
+					</li>
+				</ul>
+				<!--Вырвнивается с помощью float, при наведении просто выезжает блок через margin: left-->
+				<div class="socials">
+					<ul class="socials__list">
+						<li class="list__item">
+							<button class="globals__btn btn--socials btn--fb">Facebook</button>
+						</li>
+						<li class="list__item">
+							<button class="globals__btn btn--socials btn--tw">Twitter</button>
+						</li>
+						<li class="list__item">
+							<button class="globals__btn btn--socials btn--vk">Vkontakte</button>
+						</li>
+					</ul>
+					<button class="globals__btn btn--socials_open">Поделиться</button>
+				</div>
+			</div>
+			<!--Generator container-->
+			<div class="container__generator">
+				<div class="generator__result">
+					<h1 class="h1">Генератор водяных знаков</h1>
+					<!-- чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four -->
+					<div class="result__block result-block--four">
+						<div class="block__root">
+							<img class="root__image" src="images/root.jpg" height="365" width="436" alt="">
+						</div>
+
+						<!--Если один вотермарк-->
+						<div class="block__watermark">
+							<img class="watermark__image" src="images/watermark.png" height="223" width="216" alt="#">
+						</div>
+						<!--Если вотермарков должно быть много-->
+						<table class="block__watermark--four">
+							<tbody>
+								<tr>
+									<td class="block__watermark__item block__watermark__item-11">
+										<img src="images/watermark.png" alt="картинка" class="block__watermark__image">
+									</td>
+									<!-- Чтобы отталкивать вотермарки по вертикали достаточно делать шире этот блок -->
+									<td class="block__watermark__vertical-separator"></td>
+									<td class="block__watermark__item block__watermark__item-12">
+										<img src="images/watermark.png" alt="картинка" class="block__watermark__image">
+									</td>
+								</tr>
+
+								<tr class="block-watermark__horizontal-separator"></tr>
+								<tr>
+									<td class="block__watermark__item-21">
+										<img src="images/watermark.png" alt="картинка" class="block__watermark__image">
+									</td>
+									<td class="block__watermark__vertical-separator"></td>
+									<td class="block__watermark__item-22">
+										<img src="images/watermark.png" alt="картинка" class="block__watermark__image">
+									</td>
+								</tr>
+								</tbody>
+						</table>
+					</div>
+
+				</div>
+				<!--Setting Block-->
+				<div class="generator__settings">
+					<h2 class="h2">Настройки</h2>
+					<!--Отправляем/получаем данные через ajax-->
+					<form class="settings__form" action="#" method="post">
+						<fieldset class="form__block form__block--download form__block--border">
+							
+							<div class="form__upload-block">
+								<label class="p">Исходное изображение</label>
+								<div class="upload-block__wrap">
+									<!--Стилизуем загрузку-->
+									<div class="upload-block__style">
+										<div class="form__input style__input">Image.png</div>
+										<div class="btn btn--red btn--upload"></div>
+									</div>
+									<!--Само поле загрузки, opacity: 0-->
+									<input class="form__input input--upload" type="file" name="original" id="file-original">
+								</div>
+							</div>
+							<div class="form__upload-block">
+								<label class="p">Водяной знак </label>
+								<div class="upload-block__wrap">
+									<!--Стилизуем загрузку-->
+									<div class="upload-block__style">
+										<div class="form__input style__input">Image.png</div>
+										<div class="btn btn--red btn--upload"></div>
+									</div>
+									<!--Само поле загрузки, opacity: 0-->
+									<input class="form__input input--upload" type="file" name="watermark" id="file-watermark">
+								</div>
+							</div>
+
+						</fieldset>
+						<!-- Чтобы переключить вид формы, нужно добавить в филдсет класс form__block--onemark -->
+						<fieldset class="form__block form__block--position form__block--border">
+						<!-- Заголовок блока -->
+							<label class="p">Положение</label>
+							<dl class="application-types">
+								<dd class="application-types__item application-types__item--four application-types__item--four--active js-use-four">4 ячейки</dd>
+								<dd class="application-types__item application-types__item--one js-use-one">1 ячейка</dd>
+							</dl>
+
+							<ul class="visual__table">
+								<li class="visual__table__item visual__table__item--current visual__table__item--12" data-cord="11">11</li>
+								<li class="visual__table__item visual__table__item--12" data-cord="12">12</li>
+								<li class="visual__table__item visual__table__item--13" data-cord="13">13</li>
+								<li class="visual__table__item visual__table__item--21" data-cord="21">21</li>
+								<li class="visual__table__item visual__table__item--22" data-cord="22">22</li>
+								<li class="visual__table__item visual__table__item--23" data-cord="23">23</li>
+								<li class="visual__table__item visual__table__item--31" data-cord="31">31</li>
+								<li class="visual__table__item visual__table__item--32" data-cord="32">32</li>
+								<li class="visual__table__item visual__table__item--33" data-cord="33">33</li>
+								<li class="visual__table__line visual__table__line--x">горизонтальная линия</li>
+								<li class="visual__table__line visual__table__line--y">вертикальная линия</li>
+							</ul>
+							
+							<div class="positioning-switch">
+
+								<div class="positioning-switch__item">
+									<div id="y-cord" class="positioning-switch__data positioning-switch__data--y">12</div>
+									<a href="#" class="positioning-switch__link positioning-switch__link--up js-move-obj" data-direction="y-up">Вверх</a>
+									<a href="#" class="positioning-switch__link positioning-switch__link--down js-move-obj">Вниз</a>
+								</div>
+
+								<div class="positioning-switch__item">
+									<div id="x-cord" class="positioning-switch__data positioning-switch__data--x">12</div>
+									<a href="#" class="positioning-switch__link positioning-switch__link--up js-move-obj" data-direction="x-up">Вверх</a>
+									<a href="#" class="positioning-switch__link positioning-switch__link--down js-move-obj">Вниз</a>
+								</div>
+
+							</div>
+							
+						</fieldset>
+						<fieldset class="form__block form__block--opacity form__block--border">
+				      <label for="#" class="p">Прозрачность</label>      
+				      <div id="slider-range-min"></div>
+				    </fieldset>
+				    
+				    <fieldset class="form__block form__block--btn">
+				      <button type="reset" class="btn-g btn-g-reset">Сброс</button>
+				      <button type="submit" class="btn-g btn-g-download">Скачать</button>      
+				    </fieldset>
+
+					</form>
+				</div>
+			</div>
+			<footer id="footer"> 
+				<p class="p p--small">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+			</footer>
+		</div>
+		
+		<!--TODO uncomment when deploy final-->
+		<!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->
+		<!--script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')-->
+		</body>
+</html>

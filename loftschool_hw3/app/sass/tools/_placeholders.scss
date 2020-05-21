@@ -1,0 +1,94 @@
+//===Clearfix 
+%clearfix {
+	&:after {
+		clear: both;
+		display: block;
+		width: 0;
+		height: 0;
+		visibility: hidden;
+		content: '';
+	}
+}
+
+//===Buttons on the left
+%globals__btn {
+	display: block;
+	width: 43px;
+}
+
+%btn--socials {
+	@extend %globals__btn;
+	overflow: hidden;
+	height: 42px;
+	background: rgba(white, .6) url('../images/social-btns.png') no-repeat 0 0;
+	text-indent: -9999px;
+	transition: none;
+}
+
+//===Buttons
+%btn {
+	border: 1px solid transparent;
+	color: color('light-grey');
+	font-size: 1.8rem;
+	font-weight: bold;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+%btn--remove-text {
+	overflow: hidden;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+%btn--red {
+	@extend %btn;
+	background-color: color('red');
+
+	&:hover {
+		box-shadow: 0 0 3px 3px rgba(249, 126, 118, 0.26);
+		border-color: #e3736c;
+	}
+}
+
+%btn--grey {
+	@extend %btn;
+	background-color: color('light-blue');
+
+	&:hover {
+		box-shadow: 0 0 3px 3px rgba(181, 196, 205, 0.54);
+		border-color: #a6b2bb;
+	}
+}
+
+%btn--from-send {
+	width: 97px;
+	height: 40px;
+	border-radius: 3px;
+	text-align: center;
+	transition: all .25s ease-in-out;
+}
+
+%btn--app-type {
+	@extend %btn--remove-text;
+	float: left;
+	margin: 0 10px 0 0;
+	width: 20px;
+	height: inherit;
+	@include graphics(-37px, 0px);
+
+  &:last-child {
+	margin-right: 0;
+  }
+}
+
+%btn--control {
+	@extend %btn--remove-text;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: inherit;
+	height: 10px;
+	@include graphics(0, -21px);
+}

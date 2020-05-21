@@ -1,0 +1,72 @@
+/*======================
+	HEADER (START)
+=======================*/
+#header {
+	position: relative;
+	height: map-get($header-h, mobile)*1px;
+	background-color: color('lightgrey');
+	border-bottom: 3px solid #1c667a;
+	
+	&:after {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		height: 3px;
+		background: -moz-linear-gradient(left,  #f2f6fa 0%, #1c667a 50%, #f2f6fa 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f2f6fa), color-stop(50%,#1c667a), color-stop(100%,#f2f6fa)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* IE10+ */
+		background: linear-gradient(to right,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6fa', endColorstr='#f2f6fa',GradientType=1 ); /* IE6-9 */
+		content: '';
+	}
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		margin: 0 0 $margin*3.5; 
+		height: map-get($header-h, tablet)*1px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		height: map-get($header-h, desktop)*1px;
+	}
+}
+
+.header__wrap {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 92.1875%;
+	min-width: 295px;
+	height: 100%;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		min-width: 700px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		max-width: 1220px;
+	}
+}
+
+// .header__logo {
+// 	position: absolute;
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	margin: auto;
+// 	height: .7em + 2em + 0.05em; // h1-line-height + h2-line-height + border-heght/font-size
+
+// 	@media screen and (min-width: breakpoint(tablet)) {
+// 		height: 3.1em + 1.2em + 0.03em;
+// 	}
+
+// 	@media screen and (min-width: breakpoint(desktop)) {
+// 		height: 3.6em + 1.4em + 0.027em;
+// 	}
+// }
+/*======================
+	HEADER (END)
+=======================*/

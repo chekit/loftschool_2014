@@ -1,0 +1,5 @@
+mixin socials(Socials)
+	ul.socials__list
+		each network in Socials
+			li.list__item
+				a(class = network.className, href = network.link)= network.title

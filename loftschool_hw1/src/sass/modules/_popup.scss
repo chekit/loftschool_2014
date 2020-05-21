@@ -1,0 +1,122 @@
+.popup-container {
+	position: absolute;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+
+	&:before {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		content: '';
+	}
+
+	&#{__bg} {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 9997;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(color('deepblue'), .75);
+	}
+}
+
+.container--none {
+	display: none;
+}
+
+.add--info {
+	width: (290/310)*100%;
+}
+
+.popup {
+	box-shadow: 0 6px 13px 4px rgba(13, 16, 7, .35);
+	position: relative;
+	z-index: 9999;
+	display: inline-block;
+	text-align: left;
+	width: (310/320)*100%;
+	
+	@media screen and (min-width: breakpoint(tablet)) {
+		display: inline-block;
+		margin-top: 50px;
+		width: (429/768)*100%;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		display: inline-block;
+		width: (364/1400)*100%;
+	}
+
+	&#{__close-btn} {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		overflow: hidden;
+		width: 17px;
+		height: 17px;
+		background: transparent url('../images/close-popup-icon.png') no-repeat center center;
+		text-indent: -9999px;
+		transition: all .25s ease-in-out;
+
+		@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+			background-image:  url('../images/close-popup-icon@2x.png');
+			background-size: 17px 17px;
+		}
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			top: 0;
+			right: 11px;
+			bottom: 0;
+			margin: auto;
+			width: 25px;
+			height: 25px;
+			background-image:  url('../images/close-popup-icon@2x.png');
+			background-size: 25px 25px;
+
+			@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+				background-size: 25px 25px;
+			}
+		}
+
+		&:hover {
+			transform: rotate(90deg);
+		}
+	}
+
+	.header--bg {
+		position: relative;
+		margin-bottom: 0;
+		height: 44px;
+		border-bottom-width: 9px;
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			text-align: left;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+		}
+	}
+
+	.item__wrap {
+		margin: $margin 0 0;
+	}
+
+	.form-block__item {
+		margin: 0 0 $margin*1.5;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.info-block {
+		margin: 0;
+		width: 100%
+	}
+}

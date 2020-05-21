@@ -1,0 +1,8 @@
+.aside__contacts a {
+	color: color('darkblue');
+	text-decoration: none;
+
+	&:hover {
+		color: darken(color('darkblue'), 10%);
+	}
+}

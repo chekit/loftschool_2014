@@ -1,0 +1,36 @@
+
+<main class="contacts">
+  <form ng-cloak="ng-cloak" class="contacts__add-form" ng-controller="ContactController as contact" ng-submit="editContactForm.$valid && contact.updateContact(contact.userData)" name="editContactForm">
+    <loader-block ng-hide="contact.exist"></loader-block>
+    <p ng-show="contact.deleted" class="delete-success text-center">Контакт Удален</p>
+    <fieldset class="add-form__block block--avatar">
+      <div class="add-form__avatar"><img class="avatar__image" src="{{contact.userData.thumb}}" alt="{{contact.userData.name + contact.userData.surname}}"/></div>
+      <div class="add-form__send" ng-class="{'align-center': contact.readonly}">
+        <button class="btn btn-default btn--edit" ng-click="contact.edit($event)" ng-show="contact.readonly">Редактировать</button>
+        <button class="btn btn-default btn--submit" ng-click="contact.saveInfo()" ng-hide="contact.readonly" type="submit">Сохранить</button>
+        <button class="btn btn-default btn-delete" ng-hide="contact.readonly" ng-click="contact.deleteContact($event)">Удалить</button>
+      </div>
+    </fieldset>
+    <fieldset class="add-form__block block--inputs">
+      <div class="form-group">
+        <label for="contact-name" class="h5"><strong>Имя </strong></label>
+        <input required="required" class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Имя контакта" ng-model="contact.userData.name" ng-readonly="contact.readonly"/>
+      </div>
+      <div class="form-group">
+        <label for="surname--input" class="h5"><strong>Фамилия</strong></label>
+        <input required="required" class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Фамилия контакта" ng-model="contact.userData.surname" ng-readonly="contact.readonly"/>
+      </div>
+      <div>
+        <p class="h5"><strong>Контактная информация</strong></p>
+        <div class="input-group form-group">
+          <label for="contact-email" class="input-group-addon"><span class="icon--email"></span></label>
+          <input required="required" class="form-control" type="email" name="contact-email" id="contact-email" placeholder="yourmail@gmail.com" ng-model="contact.userData.email" ng-readonly="contact.readonly" ng-pattern="/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm"/>
+        </div>
+        <div class="input-group form-group">
+          <label for="contact-phone" class="input-group-addon"><span class="icon--phone"></span></label>
+          <input class="form-control" type="tel" name="contact-phone" id="contact-phone" placeholder="+7 911 123 4566" ng-model="contact.userData.phone" ng-readonly="contact.readonly"/>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</main>

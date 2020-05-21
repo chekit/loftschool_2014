@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Watermark App - Группа №2</title>
+    <meta name="description" content="">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <!--build:js js/libs/modernizr.min.js-->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!--endbuild-->
+  </head>
+  <body><!--[if lt IE 8]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      to improve your experience.
+    </p><![endif]-->
+    <!--Global Container-->
+    <!--TO show share buttons we need to add .show--share-->
+    <div class="container">
+      <!--Share Buttons and Language Buttons-->
+      <div class="container__globals">
+        <!--Choose Language-->
+        <ul class="globals__lang">
+          <li class="lang__item">
+            <button data-lang="rus" class="globals__btn">Рус</button>
+            <button data-lang="eng" class="globals__btn">Eng</button>
+          </li>
+        </ul>
+        <!--Share-->
+        <div class="socials">
+                <ul class="socials__list">
+                  <li class="list__item"><a href="#" class="globals__btn--fb">Facebook</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn--tw">Twitter</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn--vk">Vkontakte</a></li>
+                </ul>
+          <button class="globals__btn--open js-show-share">Поделиться</button>
+        </div>
+      </div>
+      <!--Generator container-->
+      <div class="container__generator">
+        <!--Result Block-->
+        <div class="generator__result">
+          <h1 class="h1 js-app-name">Генератор водяных знаков</h1>
+          <!--чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four-->
+          <div class="result__block">
+            <div class="block__root">
+              <!--Если один вотермарк-->
+              <div class="block__watermark"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></div><img src="images/root.jpg" alt="Основная картинка" class="root__image">
+            </div>
+          </div>
+        </div>
+        <!--Setting Block-->
+        <div class="generator__settings">
+          <h2 class="h2 js-settings-name">Настройки</h2>
+          <!--Отправляем/получаем данные через ajax-->
+          <form class="form--upload" action="#" method="post" enctype="multipart/form-data">
+            <fieldset class="form__block block--noborder">
+              <div class="form__upload-block">
+                <label class="p js-image-upload-name">Исходное изображение</label>
+                <div class="upload-block__wrap">
+                  <!--Стилизуем загрузку-->
+                  <div class="upload-block__style">
+                    <div class="form__input style__input">Image.png</div>
+                    <div class="btn--upload">Загрузить</div>
+                  </div>
+                  <!--Само поле загрузки, opacity: 0-->
+                  <input class="form__input input--upload" type="file" name="original" id="file-original" data-type="original">
+                  <input id="send-image" type="submit" value="" hidden>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+          <form class="form--upload" action="#" method="post" enctype="multipart/form-data">
+            <fieldset class="form__block">		
+              <div class="form__upload-block">
+                <label class="p js-wm-upload-name">Водяной знак </label>
+                <div class="upload-block__wrap">
+                  <!--Стилизуем загрузку-->
+                  <div class="upload-block__style">
+                    <div class="form__input style__input">Image.png</div>
+                    <div class="btn--upload">Загрузить</div>
+                  </div>
+                  <!--Само поле загрузки, opacity: 0-->
+                  <input class="form__input input--upload" type="file" name="watermark" id="file-watermark" data-type="watermark">
+                  <input id="send-wm" type="submit" value="" hidden>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+          <form class="settings__form" action="#" method="post">
+            <fieldset class="form__block">
+              <div class="block__header">
+                <h3 class="p js-position-name">Положение</h3>
+                <!--Выбор типа наложения, .btn--active show active tab-->
+                <div class="application-types">
+                  <button data-type="use-four" class="btn--four-marks js-switch-type">4 Вотермарка</button>
+                  <button data-type="use-one" class="btn--one-mark btn--active js-switch-type">1 Вотермарк</button>
+                </div>
+              </div>
+              <div class="positioning">
+                <!--Настройки для одного вотермарка -->
+                <div class="positioning__block block--coordinates">
+                  <div class="positioning__visual">
+                    <!--Визуальное отображение расположения вотермарка-->
+                    <table class="visual__box">
+                      <tbody class="box__body">
+                        <tr class="box__row">
+                          <td class="box__cell cell--active">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="0"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="0"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="0"></button>
+                          </td>
+                        </tr>
+                        <tr class="box__row">
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="178"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="178"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="178"></button>
+                          </td>
+                        </tr>
+                        <tr class="box__row">
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="356"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="356"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="356"></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="positioning__switch">
+                    <div class="switch__block">
+                      <p class="p p--big">X</p>
+                      <input id="x-cord" class="form__input input--switch" type="text" name="xValue" value="0" readonly="readonly">
+                      <div class="switch__controls controls--cords">
+                        <button data-direction="x-up" class="btn--up js-move-obj">Больше</button>
+                        <button data-direction="x-down" class="btn--down js-move-obj">Меньше</button>
+                      </div>
+                    </div>
+                    <div class="switch__block">
+                      <p class="p p--big">Y</p>
+                      <input id="y-cord" class="form__input input--switch" type="text" name="yValue" value="0" readonly="readonly">
+                      <div class="switch__controls controls--cords">
+                        <button data-direction="y-up" class="btn--up js-move-obj">Больше</button>
+                        <button data-direction="y-down" class="btn--down js-move-obj">Меньше	</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="positioning__block block--borders block--hidden">
+                  <div class="positioning__visual">
+                    <!--Визуальное отображение расположения вотермарка (расстояние между границами)-->
+                    <div class="visual__borders"><span class="border__line line--x">горизонтальная линия</span><span class="border__line line--y">вертикальная линия</span></div>
+                    <table class="visual__box">
+                      <tbody class="box__body">
+                        <tr class="box__row">
+                          <td class="box__cell cell--active">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="0"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="0"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="0"></button>
+                          </td>
+                        </tr>
+                        <tr class="box__row">
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="178"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="178"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="178"></button>
+                          </td>
+                        </tr>
+                        <tr class="box__row">
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="0" data-cord-y="356"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="217" data-cord-y="356"></button>
+                          </td>
+                          <td class="box__cell">
+                            <button class="btn--cell js-set-cord" data-cord-x="434" data-cord-y="356"></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="positioning__switch">
+                    <div class="switch__block block--vertical">
+                      <input id="y-border" class="form__input input--switch" type="text" value="0" name="yBorder" disabled="true" readonly="readonly">
+                      <div class="switch__controls controls--borders">
+                        <button data-border="y-b-up" class="btn--up js-switch-border">Больше</button>
+                        <button data-border="y-b-down" class="btn--down js-switch-border">Меньше</button>
+                      </div>
+                    </div>
+                    <div class="switch__block block--horizontal">
+                      <input id="x-border" class="form__input input--switch" type="text" value="0" name="xBorder" disabled="true" readonly="readonly">
+                      <div class="switch__controls controls--borders">
+                        <button data-border="x-b-up" class="btn--up js-switch-border">Больше</button>
+                        <button data-border="x-b-down" class="btn--down js-switch-border">Меньше</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form__block">
+              <div class="block__header">
+                <p class="p js-opacity-name">Прозрачность</p>
+                <div class="slider-range"></div>
+                <input id="opacity-value" type="text" name="opacity" value="80" readonly hidden class="opacity-val">
+              </div>
+            </fieldset>
+            <fieldset class="form__block block--noborder">
+              <button type="reset" class="btn--reset js-reset-name">Сброс</button>
+              <button type="submit" class="btn--submit js-download-name">Скачать</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <footer id="footer"> 
+      <p class="p p--small">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+    </footer>
+    <!--build:js js/libs/libs.min.js-->
+    <!--bower:js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <!--endbower-->
+    <!--endbuild-->
+    <!--TODO uncomment when deploy final-->
+    <!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->
+    <!--script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')-->
+    <!--build:appjs js/app.min.js-->
+    <script src="js/app.js"></script>
+    <!--endbuild-->
+  </body>
+</html>

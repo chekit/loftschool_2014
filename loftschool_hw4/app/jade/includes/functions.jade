@@ -1,0 +1,26 @@
+.functions
+	a.btn.btn-default&attributes({
+		href: "#/add",
+		role: "button",
+		'ng-show': 'func.isList()'
+	}) Добавить
+	a.btn--back&attributes({
+		href: '#/',
+		role: 'button',
+		'ng-show': 'func.isAdd()'
+	}) Назад
+	ul.functions__list(ng-show="func.isList()")
+		li.list__item&attributes({
+				'data-ng-class' : "{'item--active' : func.grid.isActive('line')}"
+			})
+			button.btn--show-line&attributes({
+				'data-ng-click': "func.grid.setType('line')" 
+			})
+				| Показать построчно
+		li.list__item&attributes({
+				'data-ng-class': "{'item--active' : func.grid.isActive('grid')}"
+			})
+			button.btn--show-grid&attributes({
+				'data-ng-click': "func.grid.setType('grid')" 
+			})
+				| Показать сеткой

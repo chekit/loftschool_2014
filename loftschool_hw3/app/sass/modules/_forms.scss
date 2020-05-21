@@ -1,0 +1,48 @@
+.form__block {
+	position: relative;
+	margin-bottom: 15px;
+	border-bottom: 1px solid color('red');
+	padding: 0 20px 30px;
+
+	&:after {
+		position: absolute;
+		left: 50%;
+		bottom: -10px;
+		z-index: 2;
+		margin-left: -9px;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-top: 10px solid color('red');
+		content: "";
+	}
+
+	&:before {
+		position: absolute;
+		left: 50%;
+		bottom: -9px;
+		z-index: 5;
+		margin-left: -9px;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-top: 10px solid color('light-grey');
+		content: "";
+	}
+
+	&.block--noborder {
+		margin: 45px 0 0;
+		padding: 0 10px;
+		border: none;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.form__input {
+	background-color: #fff;
+	border: 1px solid color('input-color');
+	border-radius: 3px;
+	color: color('input-color');
+}

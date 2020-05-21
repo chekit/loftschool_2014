@@ -1,0 +1,9 @@
+.footer__text {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 1.1rem;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		font-size: 1.3rem;
+	}
+}

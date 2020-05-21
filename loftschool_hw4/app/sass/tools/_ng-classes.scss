@@ -1,0 +1,40 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+//Functions Block ngAnimate
+.btn--back {
+	opacity: 1;
+	left: 0;
+}
+
+.btn--back {
+	transition: opacity .25s ease-in-out .1s;
+}
+
+.btn--back.ng-hide {
+	opacity: 0;
+}
+
+.btn,
+.functions__list {
+	transition: opacity .25s ease-in-out;
+}
+
+.functions__list.ng-hide,
+.btn.ng-hide {
+	opacity: 0;
+}
+
+//Form Validation
+.ng-valid.ng-dirty {
+	border-color: $valid;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: $error;
+}
+
+.ng-invalid-email:after {
+	content: 'EMAIL';
+}

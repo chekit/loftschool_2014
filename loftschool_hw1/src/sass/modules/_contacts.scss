@@ -1,0 +1,75 @@
+/*======================
+	CONTACTS (START)
+=======================*/
+.header--contacts {
+	display: none;
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		display: block;
+	}
+}
+
+.contacts__item {
+	height: 40px;
+	width: 100%;
+	line-height: 2.4375em;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		float: left;
+		width: 33.33%;
+		height: 46px;
+		line-height: 2.7em;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		float: none;
+		width: 100%;
+		height: 40px;
+	}
+
+	.item__text {
+		display: inline-block;
+		margin: 0 0 0 50%;
+		width: 60%;
+		padding-left: 45px;
+		line-height: 1.3125em;
+		background: {
+			color: transparent;
+			image: url('../images/contacts-icons.png');
+			repeat: no-repeat;
+			position: 0 0;
+		};
+		transform: translateX(-50%);
+
+		&:hover {
+			color: color('deeppurple');
+		}
+	}
+}
+
+.item--mail {
+	background-color: color('darkcyan');
+
+	.item__text {
+		background-position: 0 0;
+	}
+}
+
+.item--phone {
+	background-color: color('blue');
+
+	.item__text {
+		background-position: 0 -24px;
+	}
+}
+
+.item--skype {
+	background-color: color('lightblue');
+
+	.item__text {
+		background-position: 0 -47px;
+	}
+}
+/*======================
+	CONTACTS (END)
+=======================*/

@@ -1,0 +1,160 @@
+.form__fieldset:after,
+.form__wrap:after{
+	@extend %clearfix;
+}
+
+.form__fieldset {
+	position: relative;
+	margin: 0 0 $margin*1.5;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.form__label {
+	float: left;
+	font-size: 1.4rem;
+	line-height: 26/14*1em;
+}
+
+.form__input,
+.form__textarea {
+	box-sizing: border-box;
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid color('lightblue');
+	color: color('darkblue');
+	font-size: 1.2rem;
+	
+	//Placeholder Styles
+	&::-webkit-input-placeholder {
+	    color: color('lightblue');
+	}
+	&:-moz-placeholder {
+	    color: color('lightblue');
+	    opacity:  1;
+	}
+	&::-moz-placeholder {
+	    color: color('lightblue');
+ 	    opacity:  1;
+	}
+	&:-ms-input-placeholder {
+	    color: color('lightblue');
+	}
+
+	@at-root .fieldset--error & {
+		background-color: color('error');
+		border-color: color('error-border');
+		color: white;
+
+		//Placeholder Styles
+		&::-webkit-input-placeholder {
+		    color: white;
+		}
+		&:-moz-placeholder {
+		    color: white;
+		    opacity:  1;
+		}
+		&::-moz-placeholder {
+		    color: white;
+	 	    opacity:  1;
+		}
+		&:-ms-input-placeholder {
+		    color: white;
+		}
+	}
+}
+
+.form__input {
+	float: right;
+	padding: $padding*0.7;
+	height: 26px;
+
+	@at-root .aside__form & {
+		width: 133px;
+	}
+}
+
+.form__textarea {
+	padding: $padding*1.2 $padding*0.8;
+	width: 100%;
+	height: 69px;
+	resize: none;
+}
+
+.form__wrap {
+	@at-root .aside__form & {
+		float: right;
+	}
+}
+
+.form__btn {
+	width: 89px;
+	height: 35px;
+	color: white;
+	font: {
+		size: 1.5rem;
+		weight: bold;
+		family: font(elektraLightBold), "Helvetica Neue",Helvetica,Arial,sans-serif;
+	};
+	transition: background-color .25s ease-in-out;
+
+	
+	@at-root .btn--grey {
+		background-color: color('lightblue');
+	
+		&:hover,
+		&:focus {
+			background-color: darken(color('lightblue'), 20%)
+		}
+
+		@at-root .aside__form & {
+			float: right;
+		}
+	}
+
+	@at-root .btn--blue {
+		background-color: color('blue');
+
+		&:hover,
+		&:focus {
+			background-color: darken(color('blue'), 5%)
+		}
+
+		@at-root .aside__form & {
+			float: left;
+		}
+	}
+}
+
+/*** Tooltip (Start) ***/
+.fieldset__tooltip {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 9998;
+	margin: auto 0 auto 15px;
+	padding: 0 10px;
+	height: 26px;
+	left: 100%;
+	background-color: color('error');
+	color: white;
+	font-size: 1.2rem;
+	line-height: 26px;
+	white-space: pre;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 100%;
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 13px 10px 13px 0;
+		border-color: transparent color('error') transparent transparent;
+		content: '';
+	}
+}
+/*** Tooltip (End) ***/

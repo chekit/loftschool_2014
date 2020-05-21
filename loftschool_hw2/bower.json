@@ -1,0 +1,26 @@
+{
+  "name": "homework_2",
+  "private": true,
+  "version": "0.1.0",
+  "homepage": "http://acherepov.ru/projects/apple_shop/",
+  "authors": [
+    "Anton Cherepov <chekitdnb@gmail.com>"
+  ],
+  "main": "app/index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "jquery-placeholder": "~2.0.8"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.2"
+  }
+}

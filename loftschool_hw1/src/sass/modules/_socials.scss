@@ -1,0 +1,201 @@
+/*======================
+	SOCIALS (START)
+=======================*/
+@keyframes socials {
+    0% {
+		transform: rotate(5deg);
+    }
+    
+    50% {
+		transform: rotate(-5deg);
+    }
+
+    100% {
+		transform: rotate(0deg);
+		transform: scale(1.2);
+    }
+}
+
+.socials-list {
+	display: block;
+	margin: 20px auto;
+	width: 52px*4 + $margin*8;
+	height: 52px;
+	font-size: 0;
+	text-align: justify;
+	white-space: nowrap;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		display: none;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		display: none;
+	}
+	
+	&#{__item} {
+		display: inline-block;
+		margin: 0 $margin;
+		width: 52px;
+		height: 52px;
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			width: 42px;
+			height: 42px;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			width: 47px;
+			height: 47px;
+		}
+	}
+}
+
+.item{
+	&#{__link} {
+		display: block;		
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		background: transparent url('../images/social-icons-m.png') no-repeat 0 0;
+		text-indent: -9999px;
+		transition: transform .25s ease-in-out;
+
+		&:hover {
+			animation: socials .35s ease-in-out;
+			transform: scale(1.2);
+		}
+
+		@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+			background-image:  url('../images/social-icons-m@2x.png');
+			background-size: 213px 53px;
+		}
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			background-image: url('../images/social-icons.png');
+			background-size: 171px 85px;
+
+			@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+				background-image:  url('../images/social-icons@2x.png');
+				background-size: 170px 85px;
+			}
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			background-size: 190px 93px;
+		}
+
+		&#{--vk} {
+			background-position: 0 0;
+
+			@media screen and (min-width: breakpoint(tablet)) {
+				background-position: 0 0;
+			}
+
+			@media screen and (min-width: breakpoint(desktop)) {
+				background-position: 0 0;
+			}
+
+			&:hover {
+				@media screen and (min-width: breakpoint(tablet)) {
+					background-position: 0 -43px;
+				}
+
+				@media screen and (min-width: breakpoint(desktop)) {
+					background-position: 0 -47px;
+				}
+			}
+		}
+
+		&#{--tw} {
+			background-position: -54px 0;
+
+			@media screen and (min-width: breakpoint(tablet)) {
+				background-position: -43px 0;
+			}
+
+			@media screen and (min-width: breakpoint(desktop)) {
+				background-position: -47px 0;
+			}
+			
+			&:hover {
+				@media screen and (min-width: breakpoint(tablet)) {
+					background-position: -43px -43px;
+				}
+
+				@media screen and (min-width: breakpoint(desktop)) {
+					background-position: -47px -47px;
+				}
+			}
+		}
+
+		&#{--fb} {
+			background-position: -107px 0;
+			
+			@media screen and (min-width: breakpoint(tablet)) {
+				background-position: -86px 0;
+			}
+
+			@media screen and (min-width: breakpoint(desktop)) {
+				background-position: -95px 0;
+			}				
+
+			&:hover {
+				@media screen and (min-width: breakpoint(tablet)) {
+					background-position: -86px -43px;
+				}
+
+				@media screen and (min-width: breakpoint(desktop)) {
+					background-position: -95px -47px;
+				}
+			}
+		}
+
+		&#{--gh} {
+			background-position: -160px 0;
+
+			@media screen and (min-width: breakpoint(tablet)) {
+				background-position: -129px 0;
+			}
+
+			@media screen and (min-width: breakpoint(desktop)) {
+				background-position: -143px 0;
+			}
+
+			&:hover {
+				@media screen and (min-width: breakpoint(tablet)) {
+					background-position: -129px -43px;
+				}
+
+				@media screen and (min-width: breakpoint(desktop)) {
+					background-position: -143px -47px;
+				}
+			}
+		}
+	}
+}
+
+#header .socials-list {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+	margin: auto;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		right: 80px;
+		display: block;
+		width: 42px*4 + $margin*8;
+		height: 42px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		right: 0;
+		display: block;
+		width: 47px*4 + $margin*8;
+		height: 47px;
+	}
+}
+/*======================
+	SOCIALS (END)
+=======================*/

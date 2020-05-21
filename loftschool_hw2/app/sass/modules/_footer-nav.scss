@@ -1,0 +1,99 @@
+/*** Footer Navigation (Start) ***/
+.footer__nav {
+	overflow: hidden;
+}
+ 
+.nav__block {
+	float: left;
+	font-size: 1.5rem;
+	line-height: 1.667em;
+}
+
+.footer__downloads {
+	margin: 0 0 $margin*2.8 0;
+	font-size: 0;
+	line-height: 1em;
+	text-align: right;
+}
+
+.downloads__item {
+	display: inline-block;
+	margin: 0 $margin*0.5 0 0;
+	width: 90px;
+	height: 32px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.downloads__link {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	text: {
+		align: left;
+		indent: -9999px;
+	}
+	background: transparent url('../../app/images/main-sprite.png') no-repeat left top;
+}
+
+.link--appstore {
+	background-position: left -33px;
+}
+
+.link--googleplay {
+	background-position: left top;
+}
+
+.footer__socials {
+	font-size: 0;
+	line-height: 1em;
+}
+
+.socials__item {
+	display: inline-block;
+	margin: 0 $margin*0.8 0 0;
+	width: 44px;
+	height: 44px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.socials__link {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: transparent url('../../app/images/main-sprite.png') no-repeat -91px top;
+	text-indent: -9999px;
+	transition: none;
+}
+
+.link--vk {
+	background-position: -91px top;
+
+	&:hover {
+		background-position: -91px -45px;
+	}
+}
+
+.link--fb {
+	background-position: -141px top;
+
+	&:hover {
+		background-position: -141px -45px;
+	}
+}
+
+.link--tw {
+	background-position: -190px top;
+
+	&:hover {
+		background-position: -190px -45px;
+	}
+}
+/*** Footer Navigation (Start) ***/

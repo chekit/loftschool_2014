@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-ng-app="contacts" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Список Контактов</title>
+    <meta name="description" content="">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+  </head>
+  <body>
+    <div ng-controller="MainController as grid" class="container">
+      <header class="page-header">
+        <h1 class="h3 text-uppercase text-center"><strong ng-cloak>{{ pageName.getTitle() }}</strong></h1>
+      </header>
+      <functions ng-controller="FunctionsController as func"></functions>
+      <div ng-view></div>
+    </div>
+    <!--build:js js/libs/libs.min.js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <!--endbuild-->
+    <!--build:js js/app.min.js-->
+    <script src="js/app.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/loader.block.js"></script>
+    <script src="js/contact.fields.js"></script>
+    <script src="js/contact.page.js"></script>
+    <!--endbuild-->
+  </body>
+</html>

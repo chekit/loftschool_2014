@@ -1,0 +1,12 @@
+extends tmpls/_tmpl
+
+block append config
+	- var pageTitle = "Список Контактов"
+
+block content
+	.container(ng-controller="MainController as grid")
+		header.page-header
+			h1.h3.text-uppercase.text-center
+				strong(ng-cloak) {{ pageName.getTitle() }}
+		functions(ng-controller="FunctionsController as func")
+		div(ng-view)

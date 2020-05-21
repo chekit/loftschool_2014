@@ -1,0 +1,59 @@
+$fonts: (
+	'helvetica_b': "helveticaneuecyrbold",
+	'helvetica_t': "helveticaneuecyrthin",
+	'fira_sansbook': "fira_sansbook",
+	'fira_sansmedium': "fira_sansmedium",
+	'fira_sanslight': "fira_sanslight",
+	'proxima_nova_b': "proxima_nova_condensedSBd"
+);
+
+$colors: (
+	'deeppurple' : #687b8f,
+	'darkpurple' : #849db5, 
+	'deepwhite'	 : #ecfbff,
+	'darkwhite'	 : #ededed,
+	'white'		 : #fbfcfd,
+	'deepblue'	 : #58697a,
+	'darkblue'	 : #3ba8c0,
+	'blue'		 : #41b9d4,
+	'lightblue'	 : #48cbe8,
+	'deepcyan'	 : #016ca4,
+	'darkcyan'	 : #27a1ba,
+	'cyan'		 : #51daf8,
+	'lightcyan'	 : #2fa5bc,
+	'deepgrey'	 : #5a636b,
+	'darkgrey'	 : #6f727e,
+	'grey'		 : #8196ac,
+	'lightgrey'	 : #eff3f7,
+	'add-border' : #41aac2,
+	'error'		 : #f97e76,
+	'success'	 : #35B600
+);
+
+$breakpoints: (
+	mobile: 520px,
+	tablet: 760px,
+	desktop: 1200px
+);
+
+$header-h: (
+	mobile: 55,
+	tablet: 115,
+	desktop: 116
+);
+
+$footer-h: (
+	mobile: 37px - 3px,
+	tablet: 55px - 3px,
+	desktop: 80px - 3px
+);
+
+$margin: 10px;
+$padding: 10px;
+
+$border-radius: 3px;
+
+$content-width: 959px;
+$main-width: 1200px;
+
+$form_input_h: 33px;

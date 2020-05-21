@@ -1,0 +1,48 @@
+//===Font Sizes
+$font-size: (
+  exlg: 3.6rem,
+  lg: 2.6rem,
+  big: 1.8rem,
+  md: 1.4rem,
+  sm: 1.2rem
+);
+
+//===Colors
+$colors: (
+  'pink'            : #d5b39c,
+  'light-blue'      : #b5c4cd,
+  'dark-blue'       : #444a53,
+  'deep-blue'       : #2e3641,
+  'grey'            : #8e9298,
+  'btn-border'      : #94989d,
+  'light-grey'      : #f1f1f5,
+  'red'             : #f97e76,
+  'settings-border' : #b7b0b4,
+  'input-color'     : #9eb2c0,
+
+  'range-bg'        : #dbe1e8,
+  'range-lower'     : #9eb2c0
+
+);
+
+//===Font families
+$ff_robotolight: "robotolight", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$ff_robotomedium: "robotomedium", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$ff_segoeuil: "segoeuil", "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+$ff_firasans: "fira_sanslight", "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+//===Dimentions
+$w-g-s: 260px;
+$w-g-r: 700px;
+
+/* sprite */
+@mixin graphics($pos-x, $pos-y) {
+  background-image: url(../imgages/graphics.png);
+  background-repeat: no-repeat;
+  background-position: $pos-x $pos-y;
+}
+
+@mixin alignCell($pos-h, $pos-v) {
+  text-align: $pos-h;
+  vertical-align: $pos-v;
+}

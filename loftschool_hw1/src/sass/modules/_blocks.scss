@@ -1,0 +1,413 @@
+/*======================
+	INFO BLOCKS (START)
+=======================*/
+.info-block {
+	overflow: hidden;
+	margin: $margin*1.5 auto;
+	padding: $padding 0;
+	width: (295/320)*100%;
+	min-width: 295px;
+	background-color: color('lightgrey');
+	border-radius: 5px;
+	text-align: center;
+	transition: margin .25s ease-in-out;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		margin-bottom: $margin*3;
+		width: (700/768)*100%;
+		text-align: left;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		margin-bottom: $margin*2;
+		text-align: left;
+	}
+
+	&#{--contacts} {
+		position: static;
+		margin: $margin*4 0 $margin*2;
+		padding: 0;
+		width: 100%;
+		min-width: 0;
+		background-color: transparent;
+		border-radius: 0;
+		color: color('darkwhite');
+		font-size: 1.6rem;
+		text-align: left;
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			width: 100%;
+			font-size: 1.7rem;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			position: absolute;
+			top: 257px;
+			left: 0;
+			margin: $margin*2.3 0;
+			width: (258/960)*100%;
+			border-radius: 5px;
+			font-size: 1.6rem;
+		}
+	}
+}
+
+.block__wrap {
+	overflow: hidden;
+	clear: both;
+
+}
+
+@media screen and (min-width: breakpoint(tablet)) {
+	.block__avatar,
+	.block__info {
+		float: left;
+	}
+
+	.block__avatar + .block__info {
+		padding: 0;
+		margin: 0 0 0 (40/700)*100%;
+		width: (419/700)*100%;
+	}
+}
+
+@media screen and (min-width: breakpoint(desktop)) {
+	.block__avatar,
+	.block__info {
+		float: left;
+	}
+
+	.block__avatar + .block__info {
+		padding: 0;
+		margin: 0 0 0 (40/650)*100%;
+		width: (200/650)*100%;
+	}
+}
+
+/*** Avatar (Start) ***/
+.block__avatar {
+	position: relative;
+	margin: 0 auto $margin*3;
+	width: 132px;
+	height: 132px;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		float: left;
+		margin: 0 0 0 (30/700)*100%;
+		// width: (201/700)*100%;
+		width: 200px;
+		height: 200px;
+
+		& + .block__info {
+			padding: 0;
+			margin: 0 0 0 (40/700)*100%;
+			width: (419/700)*100%;
+		}
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		float: left;
+		margin: 0 0 0 (40/647)*100%;
+		// width: (200/647)*100%;
+		width: 200px;
+		height: 200px;
+
+		& + .block__info {
+			padding: 0;
+			margin: 0 0 0 (30/700)*100%;
+			width: (367/700)*100%;
+		}
+	}
+}
+
+.avatar__mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: transparent url('../images/avatar-mask.png') no-repeat center center;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		background-image: url('../images/avatar-mask@2.png');
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		background-image: url('../images/avatar-mask@2.png');
+	}
+}
+
+.avatar__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	width: 100%;
+}
+/*** Avatar (End) ***/
+.block__info {
+	padding: 0 (10/295)*100%;
+	width: 100% - (20/295)*100%;
+	font-size: 1.9rem;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		font-size: 1.8rem;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		font-size: 1.5rem;
+	}
+}
+
+.info__item {
+	margin: 0 0 $margin*3;
+
+	&:last-child {
+		margin: 0;
+	}
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		margin: $margin*1.9 0;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		margin: 0 0 1em;
+	}
+}
+
+.info--ico {
+	margin: 0 0 $margin*3;
+	background: {
+		color: transparent;
+		repeat: no-repeat;
+		position: center top;
+	};
+	font-size: 1.7rem;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		padding-top: 0;
+		padding-left: (132/700)*100%;
+		width: 100% - ((132/700)*100%+(10/700)*100%);
+		background: {
+			position: 9% center;
+		}
+		font-size: 1.9rem;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		font-size: 1.6rem;
+	}
+
+	.block__text {
+		display: block;
+	}
+}
+
+.info--expirience {
+	padding-top: $padding*5;
+	background-image: url('../images/work-icon.png');
+	@media screen and (min-width: breakpoint(tablet)) {
+		padding-top: 0;
+	}
+	@media screen and (min-width: breakpoint(desktop)) {
+		padding-top: 0;
+	}
+}
+
+.info--edu {
+	padding-top: $padding*4;
+	background-image: url('../images/univercity-icon.png');
+	@media screen and (min-width: breakpoint(tablet)) {
+		padding-top: 0;
+	}
+	@media screen and (min-width: breakpoint(desktop)) {
+		padding-top: 0;
+	}
+}
+
+.info--courses {
+	padding-top: $padding*5.6;
+	background-image: url('../images/courses-icon.png');
+	@media screen and (min-width: breakpoint(tablet)) {
+		padding-top: 0;
+	}
+	@media screen and (min-width: breakpoint(desktop)) {
+		padding-top: 0;
+	}
+}
+
+.block__text {
+	display: block;
+	color: color('deepgrey');
+	font-size: 1em;
+	line-height: 1.3em;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		display: inline-block;
+		font-size: 1em;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		display: inline-block;
+		font-size: 1em;
+		line-height: 1.75em;
+	}
+}
+
+/*** Skill list (Start) ***/
+.info__exp-list {
+	margin: $margin auto 0;
+	width: (125/295)*100%;
+	font: {
+		size: 1.4rem;
+		family: font('proxima_nova_b'), Helvetica, Arial, sans-serif;
+		weight: bold;
+	};
+	text-align: left;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		display: inline-block;
+		margin: 0 0 $margin;
+		width: (230/419)*100%;
+		vertical-align: text-top;
+	}	
+}
+
+.exp-list__item {
+	display: inline-block;
+	overflow: hidden;
+	margin: 0 0 $margin $margin*2;
+	padding: 0 $padding;
+	background: transparent url('../images/skills-bg.png') repeat-x left center;
+	border-radius: 3px;
+	color: white;
+	text-transform: lowercase;
+	line-height: 1.35em;
+}
+/*** Skill list (End) ***/
+
+/*** Portfolio (Start) ***/
+.info--portfolio {
+	margin: 0 auto $margin*3;
+	width: 71.5%;
+	text-align: center;
+	vertical-align: top;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		float: none;
+		display: inline-block;
+		margin: 0 0 $margin*3 (50/700)*100%;
+		width: 32.097%;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		float: none;
+		padding: 0;
+		margin: 0 (15/650)*100% $margin*4;
+		width: (179/650)*100%;
+	}
+
+	.add-proj-btn {
+		display: block;
+		width: 100%;
+		height: 144px;
+		background-color: rgba(color('deepwhite'), .64);
+		border: 1px dashed color('add-border');
+		border-radius: 5px;
+		color: color('darkblue');
+		font: {
+			family: font('fira_sanslight'), Helvetica, Arial, sans-serif;
+			size: 1.3rem;
+		};
+		text-align: center;
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			height: 159px;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			height: 125px;
+		}
+
+		@at-root &#{__text} {
+			position: relative;
+			display: inline-block;
+
+			&:before {
+				display: block;
+				margin: 0 auto $margin;
+				width: 32px;
+				height: 32px;
+				background: transparent url('../images/add-portfolio-icon.png') no-repeat center center;
+				content: '';
+			}
+		}		
+	}
+}
+
+.portfolio__preview {
+	position: relative;
+	margin: 0 0 5px;
+	width: 98.1%;
+	height: (144/295)*100%;
+	border: 2px solid color('darkblue');
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+
+	&:hover {
+		.portfolio__item-name {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		height: (122/700)*100%;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		height: (125/650)*100%;
+	}
+}
+
+.portfolio__item-name {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(color('deepcyan'), .75);
+	font-size: 1.2rem;
+	text-transform: lowercase;
+	transition: opacity .35s ease-in-out;
+} 
+
+.portfolio__item-name:before {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	content: '';
+}
+
+.item-name__text {
+	display: inline-block;
+	padding: 0 5px;
+	max-width: 85.99%;
+	border: 2px solid color('lightgrey');
+	border-radius: 5px;
+	color: color('lightgrey');
+	line-height: 1.42em;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	white-space: pre;
+}
+
+.preview__img {
+	display: block;
+	width: 100%;
+	border-radius: 2px;
+}
+/*** Portfolio (End) ***/
+/*======================
+	INFO BLOCKS (END)
+=======================*/

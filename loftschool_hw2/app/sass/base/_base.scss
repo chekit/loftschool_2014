@@ -1,0 +1,40 @@
+html, body {
+	overflow: visible;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+html {
+	position: relative;
+	height: 100%;
+	font-size: .625em;
+}
+
+body {
+	position: relative;
+	background-color: #fff;
+	color: color('darkblue');
+	font: normal 1rem/1.5em font(elektraLight), "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+main {
+	display: block;
+}
+
+a {
+	color: color('blue');
+	transition: all .25s ease-in-out;
+
+	&:hover {
+		color: color('purple');
+	}
+
+	@at-root #footer a {
+		color: white;
+
+		&:hover {
+			color: #ccc;
+			text-decoration: none;
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.functions {
+	position: relative;	
+	margin: 0 0 20px;
+	height: 33px;
+
+	&#{__list} {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		height: 25px;
+		font-size: 0;
+
+		.list__item {
+			display: inline-block;
+			margin: 0 27px 0 0;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.btn {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+}
+
+.btn--show-line {
+	@extend %btn-function;
+	background-position: 0 top;
+
+	&:hover,
+	&:active {
+		background-position-y: bottom;
+	}
+
+	@at-root .item--active & {
+		background-position-y: bottom;
+	}
+}
+
+.btn--show-grid {
+	@extend %btn-function;
+	background-position: -38px bottom;
+
+	&:hover,
+	&:active {
+		background-position-y: top;
+	}
+
+	@at-root .item--active & {
+		background-position-y: top;
+	}
+}
+
+.btn--back {
+	@extend %btn-function;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 26px;
+	height: 26px;
+	background-position: -120px top;
+
+	&:hover,
+	&:active {
+		background-position-y: bottom;
+	}
+} 

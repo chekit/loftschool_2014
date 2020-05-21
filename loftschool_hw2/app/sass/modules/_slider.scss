@@ -1,0 +1,155 @@
+/*** Slider (Start) ***/
+.content__slider {
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 $margin*4;
+	width: 100%;
+	height: map-get($slider, height);
+}
+
+.slider__btn {
+	position: absolute;
+	top: 102px;
+	z-index: 10;
+	margin: auto;
+	width: 62px; 
+	height: 33px;
+	background-color: color('extralightgray');
+	border-top: 1px solid #f2f0ee;
+	color: color('darkblue');
+	font: {
+		family: font(elektraLightBold), "Helvetica Neue",Helvetica,Arial,sans-serif;
+		size: 1.7rem;
+		weight: bold;
+	};
+	line-height: 33px;
+	text-align: center;
+	outline: none;
+	transition: all .25s ease-in-out;
+
+	&:hover {
+		border-top-color: #0db8f7;
+		background-color: color('blue');
+		color: white;
+	}
+
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		transition: all .25s ease-in-out;
+		content: '';
+	}
+}
+
+.btn--left {
+	margin-left: 7px;
+	left: 10px;
+
+	&:before {
+		right: 100%;
+		border-width: 17px 7px 17px 0;
+		border-color: transparent color('extralightgray') transparent transparent;
+	}
+
+	&:hover {
+		&:before {
+			border-color: transparent color('blue') transparent transparent;
+		}
+	}
+
+	&:active {
+		left: 8px;
+	}
+}
+
+.btn--right {
+	margin-right: 7px;
+	right: 10px;
+
+	&:before {
+		left: 100%;
+		border-width: 17px 0 17px 7px;
+		border-color: transparent transparent transparent color('extralightgray');
+	}
+
+	&:hover {
+		&:before {
+			border-color: transparent transparent transparent color('blue');
+		}
+	}
+
+	&:active {
+		right: 8px;
+	}
+}
+
+.btn--hide {
+	display: none;
+}
+
+.slider__slides-list {
+	width: 100%;
+	height: 100%;
+}
+
+.slides-list__item {
+	position: relative;
+	float: left;
+	width: $content-width;
+	height: 100%;
+}
+
+.item__description {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: $padding*1.5 $padding*2 0;
+	width: $content-width - $padding*4;
+	height: map-get($slider, description_height) - $padding*1.5;
+	background-color: rgba(0, 0, 0, .55);
+	font-family: font(elektraLight), "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: normal;
+	
+	@at-root .lt-ie9 & {
+		background: transparent url('../images/slider-description-bg.png') repeat left top;
+	}
+}
+
+
+.description__h3,
+.description__text,
+.item__description h3,
+.item__description p {
+	overflow: hidden;
+	width: 100%;
+	white-space: pre;
+	text-overflow: ellipsis;
+	line-height: 1.5em;
+}
+
+.description__h3,
+.item__description h3 {
+	font-size: 1.8rem;
+}
+
+.description__text,
+ .item__description p {
+	color: white;
+	font-size: 1.4rem;
+}
+
+.description__link:hover,
+.item__description a:hover {
+	color: white;
+}
+
+.item__img {
+	display: block;
+	width: 100%;
+}
+/*** Slider (Start) ***/

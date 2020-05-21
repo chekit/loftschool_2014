@@ -1,0 +1,24 @@
+/*======================
+	MAIN (END)
+=======================*/
+#wrap {
+	position: relative;
+	margin: 0 auto map-get($footer-h, mobile)+20px;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		margin-bottom: map-get($footer-h, tablet) + 30px;
+		min-width: 700px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		margin-bottom: map-get($footer-h, desktop) + 40px;		
+		padding-left: 310px;
+		max-width: 960px - 310px;
+	}
+}
+/*======================
+	MAIN (END)
+=======================*/

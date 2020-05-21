@@ -1,0 +1,95 @@
+.result__block {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 651px;
+	height: 534px;
+	background: white url('../images/clear.png') repeat left top;
+}
+
+.block__root {
+	position: relative;
+	display: table-cell;
+	width: inherit;
+	height: inherit;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.root__image {
+	display: inline-block;
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: bottom;
+}
+
+.watermark__image {
+	position: absolute;
+	// top: 25px;
+	// left: 25px;
+	top: 0;
+	left: 0;
+	width: auto;
+	max-width: 217px;
+	height: auto;
+	max-height: 178px;
+
+	// &.image--copy {
+	// 	position: static;
+	// 	display: inline-block;
+	// 	vertical-align: bottom;
+	// }
+}
+
+.block__watermark {
+
+	.result__block & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.result-block--four & {
+		display: none;
+	}	
+
+	&--four {
+		
+		position: absolute;
+		display: none;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+
+		.result-block--four & {
+			display: block;
+		}
+	}
+	&__item {
+
+		width: 325px;
+		height: 266.5px;
+
+		&-11 {
+			@include alignCell(right, bottom);
+		}
+		&-12 {
+			@include alignCell(left, bottom);
+		}
+		&-21 {
+			@include alignCell(right, top);
+		}
+		&-22 {
+			@include alignCell(left, top);
+		}
+
+
+	}
+	&__vertical-separator {
+
+		width: 12px;
+	}
+}

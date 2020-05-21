@@ -1,0 +1,318 @@
+/*======================
+	FORMS (START)
+=======================*/
+.info--form {
+	float: none;
+	overflow: visible;
+	margin: 0 auto;
+	width: (263/295)*100%;
+	text-align: left;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		width: (455/700)*100%;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		width: (377/650)*100%;
+	}
+}
+
+.wrap__field {
+	position: relative;
+
+	@at-root .item--captcha & {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		width: (110/263)*100%;
+		height: $form_input_h;
+	}
+}
+
+.form-block {
+	&#{__item} {
+		@extend %clearfix;
+		margin: 0 0 $margin*2;
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			margin: 0 0 $margin*1.5;
+		}
+	}
+
+	&#{__label} {
+		display: block;
+		color: color('deepblue');
+		font-size: .9em;
+		line-height: 1.83em;
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			font-size: 1.2em;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			font-size: 1.3em;
+		}
+	}
+
+	&#{__field} {
+		box-sizing: border-box;
+		display: block;
+		padding: ($form_input_h - 15px)/2 $padding;
+		width: 100%;
+		height: $form_input_h;
+		background-color: color('white');
+		border: 1px solid color('darkblue');
+		border-radius: 3px;
+		outline: none;
+		color: color('deepblue');
+		font-size: .684em;
+		line-height: 1.3em;
+		transition: background-color, border-color .25s ease-in-out;
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			padding: 4px $padding;
+			height: 26px;
+			font-size: .8em;
+			line-height: 1.3em;
+		}
+
+		&:focus {
+			background-color: #fff;
+			border-color: color('cyan');
+		}
+
+		@at-root .field--error & {
+			background-color: rgba(color('error'), .33);
+		}
+
+		//Style Placeholder Text
+		&::-webkit-input-placeholder {
+		   color: color('darkblue');
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+		   color: color('darkblue');  
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+		   color: color('darkblue');  
+		}
+
+		&:-ms-input-placeholder {  
+		   color: color('darkblue');  
+		}
+	}
+}
+
+.item--center {
+	text-align: center;
+}
+
+.item--captcha {
+	margin-bottom: $margin*2.7;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		margin-bottom: $margin*5.5; 
+	}
+}
+
+.field--textarea {
+	height: 97px;
+	resize: none;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		height: 207px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		padding: $padding;
+		height: 170px;
+		line-height: 1.5em;
+	}
+}
+
+.item__wrap {
+	position: relative;
+	// overflow: hidden;
+	margin: $margin*2 0 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	@at-root .item--captcha & {
+		margin-top: 0;
+	}
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		@at-root .item--personal-info & {
+			float: left;
+			width: (210/455)*100%;
+		}
+
+		@at-root .item--personal-info & + & {
+			float: right;
+		}
+	}
+}
+
+.form-block__capt {
+	width: 47.9%;
+	height: 71px;
+	background-color: #fff;
+	border:1px solid color('darkblue');
+	border-radius: 3px;
+	text-align: center;
+}
+
+.form-block__capt:before {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	content: '';
+}
+
+.capt__image {
+	display: inline-block;
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+}
+
+/* Tooltip (Start) */
+.field__tooltip {
+	position: absolute;
+	padding: 0 (4/263)*100%;
+	background-color: color('error');
+	border-radius: 2px; 
+	color: white;
+	text-transform: lowercase;
+	line-height: 1.9em;
+	text-align: center;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		border-radius: 4px; 
+		font: {
+			family: font('fira_sansbook'), Helvetica, Arial, sans-serif;
+			weight: bold;
+		};
+		line-height: 1.75em;
+	}
+}
+
+.tooltip--top {
+	right: 0;
+	bottom: 100%;
+	margin: 0 0 $margin;
+
+	&:before {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 9px 0 9px;
+		border-color: color('error') transparent transparent transparent;
+		content: '';
+	}
+}
+
+.tooltip--right {
+	top: 0;
+	left: 100%;
+	margin: 0 0 0 $margin;
+
+	&:before {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 10px 9px 0 9px;
+		border-color: color('error') transparent transparent transparent;
+		content: '';
+	}
+}
+
+.tooltip__text {
+	font-size: 1em;
+}
+/* Tooltip (End) */
+
+/* Error Message (Start) */
+.text--send_error,
+.text--send_success {
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.text--send_error {
+	color: color('error');
+}
+
+.text--send_success {
+	color: color('success');
+}
+/* Error Message (End) */
+
+/* Style Upload File (Start) */
+
+.field--upload {
+	position: relative;
+
+	.field--upload {
+		position: relative;
+		z-index: 100;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+.field__style-upload {
+	position: absolute;
+	z-index: 50;
+	width: 100%;
+}
+
+.style-upload__input {
+	position: relative;
+	z-index: 10;
+	float: left;
+	width: (238/294)*100%;
+	color: color('lightblue');
+	text-align: left;
+
+	&.input--file {
+		color: color('deepblue');
+	}
+}
+
+.style-upload__btn {
+	position: relative;
+	z-index: 20;
+	overflow: hidden;
+	display: block;
+	margin-left: -2px;
+	width: (54/294)*100%;
+	height: 33px;
+	background: color('lightblue') url('../images/upload-btn.png') no-repeat center center;
+	background-size: auto (24/41)*100%;
+	border-radius: 0 4px 4px 0;
+	text-indent: -9999px;
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		height: 26px;
+	}
+
+}
+/* Style Upload File (End) */
+
+/*** Forms Elements (End) ***/
+/*======================
+	FORMS (END)
+=======================*/

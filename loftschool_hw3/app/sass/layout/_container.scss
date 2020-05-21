@@ -1,0 +1,11 @@
+.container {
+	margin-bottom: 50px;
+}
+
+.container__generator {
+	margin: 0 auto 26px;
+	padding: 60px 0 0;
+	height: 670px;
+	width: 960px;
+	@extend %clearfix;
+}

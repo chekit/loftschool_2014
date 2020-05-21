@@ -1,0 +1,40 @@
+.contacts--grid {
+	@extend %clearfix;
+
+	.contacts__list {
+		display: inline-block;
+		margin: 0 $margin*3 $margin/2 0;
+		width: 130px;
+		border: none;
+		font-weight: bold;
+		vertical-align: bottom;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.list__item {
+		margin: 0 0 $margin/2;
+		line-height: 1.3em;
+		text-align: center;
+	}
+
+	.item--email,
+	.item--num,
+	.list--headings {
+		display: none;
+	}
+
+	.item--name,
+	.item--surname {
+		margin: 0;
+		width: auto;
+	}
+	
+	.item--fullname,
+	.item--phone {
+		width: 100%;
+		height: auto;
+	}
+}

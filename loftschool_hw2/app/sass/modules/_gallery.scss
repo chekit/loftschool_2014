@@ -1,0 +1,21 @@
+.gallery__link {
+	display: block;
+
+	&:hover {
+		background-color: black;
+
+		.gallery__img {
+			opacity: .89;
+		}
+	}
+}
+
+.gallery__item {
+	float: left;
+	margin: 0 $margin $margin 0;
+}
+
+.gallery__img {
+	display: block;
+	transition: opacity .25s ease-in-out;
+}

@@ -1,0 +1,93 @@
+.container__globals {
+	position: absolute;
+	top: 102px;
+}
+
+//Select Language
+.globals__lang {
+	margin: 0 0 1em;
+	font-size: 2rem;
+	color: color('grey');
+}
+
+.globals__btn {
+	@extend %globals__btn;
+	height: 34px;
+	background-color: rgba(color('light-grey'), .7);
+	border-bottom: 1px solid rgba(color('btn-border'), .75);
+	color: color('grey');
+	text-align: center;
+	transition: all .25s ease-in-out;
+
+	&:hover {
+		color: color('dark-blue');
+	}
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	&--fb {
+		@extend %btn--socials;
+		background-position: 0 0;
+
+		&:hover,
+		&:active {
+			background-position: 0 -124px;
+		}
+	}
+
+	&--tw {
+		@extend %btn--socials;
+		background-position: 0 -41px;
+
+		&:hover,
+		&:active {
+			background-position: 0 -165px;
+		}
+	}
+
+	&--vk {
+		@extend %btn--socials;
+		background-position: 0 -82px;
+
+		&:hover,
+		&:active {
+			background-position: 0 -206px;
+		}
+	}
+
+	&--open {
+		@extend %btn--socials;
+		float: left;
+		width: 39px;
+		background-position: -43px 0;
+
+		&:hover,
+		&:active {
+			background-position: -43px -124px;
+		}
+	}
+}
+
+//Share in socials
+.socials {
+	transform: translate3D(-43px, 0, 0);
+	transition: transform .3s ease-in-out;
+
+	@extend %clearfix;
+
+	@at-root .show--share & {
+		transform: translate3D(0, 0, 0);
+	}
+}
+
+.socials__list {
+	float: left;
+}
+
+.container__globals__active {
+	.generator__result {
+		background: #40444d;
+	}
+}

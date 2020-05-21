@@ -1,0 +1,8 @@
+li.list__item.item--num {{$index + 1}}
+li.list__item.item--image
+	img.item__image(src="{{contact.thumb}}", alt="Имя фамилия")
+li.list__item.item--fullname
+	span.item--name {{contact.name}}&nbsp;
+	span.item--surname {{contact.surname}}
+li.list__item.item--phone {{contact.phone}}
+li.list__item.item--email {{contact.email}}

@@ -1,0 +1,9 @@
+{
+    "require": {
+		"gregwar/captcha": "dev-master",
+		"phpmailer/phpmailer": "dev-master"
+    },
+ 	"config": {
+        "vendor-dir": "dist/plugins"
+    }
+}

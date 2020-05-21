@@ -1,0 +1,10 @@
+.wrapper {
+	display: block;
+	overflow: hidden;
+	margin: $margin*3.8 auto $margin*3;
+	width: $main-width;
+}
+
+@import 'aside';
+@import 'content';
+@import 'footer';

@@ -1,0 +1,11 @@
+
+<div class="functions"><a class="btn btn-default" href="#/add" role="button" ng-show="func.isList()">Добавить</a><a class="btn--back" href="#/" role="button" ng-show="func.isAdd()">Назад</a>
+  <ul ng-show="func.isList()" class="functions__list">
+    <li class="list__item" data-ng-class="{'item--active' : func.grid.isActive('line')}">
+      <button class="btn--show-line" data-ng-click="func.grid.setType('line')">Показать построчно</button>
+    </li>
+    <li class="list__item" data-ng-class="{'item--active' : func.grid.isActive('grid')}">
+      <button class="btn--show-grid" data-ng-click="func.grid.setType('grid')">Показать сеткой</button>
+    </li>
+  </ul>
+</div>

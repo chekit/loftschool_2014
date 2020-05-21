@@ -1,0 +1,125 @@
+block settings
+	.generator__settings
+		h2.h2.js-settings-name Настройки
+		//Отправляем/получаем данные через ajax
+		form.form--upload&attributes({
+			action: "#",
+			method: "post",
+			enctype: "multipart/form-data"
+		})
+			fieldset.form__block.block--noborder
+				.form__upload-block
+					label.p.js-image-upload-name Исходное изображение
+					.upload-block__wrap
+						//Стилизуем загрузку
+						.upload-block__style
+							.form__input.style__input Image.png
+							.btn--upload Загрузить
+						//Само поле загрузки, opacity: 0
+						input.form__input.input--upload&attributes({
+							type: "file",
+							name: "original",
+							id: "file-original",
+							'data-type': 'original'
+						})
+						input#send-image(type="submit", value="", hidden)
+		form.form--upload&attributes({
+			action: "#",
+			method: "post",
+			enctype: "multipart/form-data"
+		})
+			fieldset.form__block		
+				.form__upload-block
+					label.p.js-wm-upload-name Водяной знак 
+					.upload-block__wrap
+						//Стилизуем загрузку
+						.upload-block__style
+							.form__input.style__input Image.png
+							.btn--upload Загрузить
+						//Само поле загрузки, opacity: 0
+						input.form__input.input--upload&attributes({
+							type: "file",
+							name: "watermark",
+							id: "file-watermark",
+							'data-type': 'watermark'
+						})
+						input#send-wm(type="submit", value="", hidden)
+		form.settings__form&attributes({
+			action: "#",
+			method: "post"
+		})
+			fieldset.form__block
+				.block__header
+					h3.p.js-position-name Положение
+					//Выбор типа наложения, .btn--active show active tab
+					.application-types
+						button.btn--four-marks.js-switch-type(data-type="use-four") 4 Вотермарка
+						button.btn--one-mark.btn--active.js-switch-type(data-type="use-one") 1 Вотермарк
+				.positioning
+					//Настройки для одного вотермарка 
+					.positioning__block.block--coordinates
+						.positioning__visual
+							//Визуальное отображение расположения вотермарка
+							- var firstCell = ['box__cell', 'cell--active']
+							include _visual-box
+						.positioning__switch
+							.switch__block
+								p.p.p--big X
+								input#x-cord.form__input.input--switch&attributes({
+									type: "text",
+									name: "xValue",
+									value: "0",
+									readonly: "readonly"
+								})
+								.switch__controls.controls--cords
+									button.btn--up.js-move-obj(data-direction="x-up") Больше
+									button.btn--down.js-move-obj(data-direction="x-down") Меньше
+							.switch__block
+								p.p.p--big Y
+								input#y-cord.form__input.input--switch&attributes({
+									type: "text",
+									name: "yValue",
+									value: "0",
+									readonly: "readonly"
+								})
+								.switch__controls.controls--cords
+									button.btn--up.js-move-obj(data-direction="y-up") Больше
+									button.btn--down.js-move-obj(data-direction="y-down") Меньше	
+					.positioning__block.block--borders.block--hidden
+						.positioning__visual
+							//Визуальное отображение расположения вотермарка (расстояние между границами)
+							include _visual-borders
+							- var firstCell = ['box__cell']
+							include _visual-box
+						.positioning__switch
+							.switch__block.block--vertical
+								input#y-border.form__input.input--switch&attributes({
+									type: "text",
+									value: "0",
+									name: "yBorder",
+									disabled: "true",
+									readonly: "readonly"
+								})
+								.switch__controls.controls--borders
+									button.btn--up.js-switch-border(data-border="y-b-up") Больше
+									button.btn--down.js-switch-border(data-border="y-b-down") Меньше
+							.switch__block.block--horizontal
+								input#x-border.form__input.input--switch&attributes({
+									type: "text",
+									value: "0",
+									name: "xBorder",
+									disabled: "true",
+									readonly: "readonly"
+								})
+								.switch__controls.controls--borders
+									button.btn--up.js-switch-border(data-border="x-b-up") Больше
+									button.btn--down.js-switch-border(data-border="x-b-down") Меньше
+			fieldset.form__block
+				.block__header
+					p.p.js-opacity-name Прозрачность
+					.slider-range
+					input#opacity-value.opacity-val(type="text", name="opacity", value="80", readonly, hidden)
+					//- input#opacity-range.opacity__range(type = "range", name="opacity", value="80")		
+			fieldset.form__block.block--noborder
+				button.btn--reset.js-reset-name(type="reset") Сброс
+				button.btn--submit.js-download-name(type="submit") Скачать

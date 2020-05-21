@@ -1,0 +1,125 @@
+/*======================
+	HEADINGS (START)
+=======================*/
+// .logo__header1 {
+// 	font: {
+// 		family: font('helvetica_b'), Helvetica, Arial, sans-serif;
+// 		weight: bold;
+// 		size: 2rem;
+// 	};
+// 	border-bottom : 1px solid color('deepblue');
+// 	color: color('deepblue');
+// 	line-height: 1em;
+// 	text-transform: uppercase;
+
+// 	@media screen and (min-width: breakpoint(tablet)) {
+// 		font-size: 3.1rem;
+// 		border-bottom-color: color('darkgrey');
+// 		color: color('darkgrey');
+// 	}
+
+// 	@media screen and (min-width: breakpoint(desktop)) {
+// 		font-size: 3.6rem;
+// 		border-bottom-color: color('darkgrey');
+// 		color: color('darkgrey');
+// 	}
+// }
+
+// .logo__header2 {
+// 	font: {
+// 		family: font('helvetica_t'), Helvetica, Arial, sans-serif;
+// 		weight: normal;
+// 		size: .7rem;
+// 	};
+// 	line-height: 1.5em;
+// 	text-align: center;
+// 	text-transform: lowercase;
+// 	letter-spacing: -0.02em;
+
+// 	@media screen and (min-width: breakpoint(tablet)) {
+// 		font-size: 1.2rem;
+// 	}
+
+// 	@media screen and (min-width: breakpoint(desktop)) {
+// 		font-size: 1.4rem;
+// 	}	
+// }
+
+.header__show-menu-btn {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 7px;
+	overflow: hidden;
+	margin: auto;
+	width: 25px;
+	height: 21px;
+	background: transparent url('../images/menu-icon.png') no-repeat left top;
+	text-indent: -9999px;
+
+	@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+		background-image: url('../images/menu-icon@2x.png');
+		background-size: 25px 21px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		display: none;
+	}
+}
+
+.block__header2 {
+	margin: 0 0 1em;
+	color: color('darkblue');
+	font-size: 2.4rem;
+	line-height: 1em;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		float: left;
+		padding: 0 $padding*2.5;
+		font-size: 2.7rem;
+		line-height: 2.3em;
+		border-bottom: 2px solid color('darkblue');
+	}
+}
+
+.header--bg {
+	display: table;
+	margin-top: -1*$margin;
+	padding: 0 (10/295)*100%;
+	width: 100% - 2*3%;
+	height: 100px;
+	background-color: color('lightblue');
+	border-bottom: 14px solid #67dffa;
+	color: color('white');
+	vertical-align: middle;
+	text-align: center;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		height: 113px;
+		border-bottom-width: 21px;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		height: 121px;
+		border-bottom-width: 17px;
+	}
+}
+
+.header--contacts {
+	float: none;
+	margin: 0;
+	height: 40px;
+	background-color: color('darkblue');
+	border: none;
+	color: color('white');
+	font-size: inherit;
+	line-height: 2.5em;
+}
+
+.header__text {
+	display: table-cell;
+	vertical-align: middle;
+}
+/*======================
+	HEADINGS (END)
+=======================*/

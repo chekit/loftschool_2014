@@ -1,0 +1,81 @@
+main.contacts
+	form.contacts__add-form(ng-cloak)&attributes({
+		'ng-controller': 'ContactController as contact',
+		'ng-submit': 'editContactForm.$valid && contact.updateContact(contact.userData)',
+		'name': 'editContactForm'
+	})
+		loader-block(ng-hide="contact.exist")
+		p.delete-success.text-center(ng-show = "contact.deleted") Контакт Удален
+		fieldset.add-form__block.block--avatar
+			.add-form__avatar
+				img.avatar__image&attributes({
+					src: '{{contact.userData.thumb}}',
+					alt: '{{contact.userData.name + contact.userData.surname}}'
+				})
+			.add-form__send&attributes({
+				'ng-class': "{'align-center': contact.readonly}"
+			})
+				button.btn.btn-default.btn--edit&attributes({
+					'ng-click' : 'contact.edit($event)',
+					'ng-show' : 'contact.readonly'
+				}) Редактировать
+				button.btn.btn-default.btn--submit&attributes({
+					'ng-click' : 'contact.saveInfo()',
+					'ng-hide' : 'contact.readonly',
+					type: 'submit'
+				}) Сохранить
+				button.btn.btn-default.btn-delete&attributes({
+					'ng-hide' : 'contact.readonly',
+					'ng-click' : 'contact.deleteContact($event)',
+				}) Удалить
+		fieldset.add-form__block.block--inputs
+			.form-group
+				label.h5(for="contact-name")
+					strong Имя 
+				input.form-control(required)&attributes({
+					type: 'text',
+					name: 'contact-name',
+					id: 'contact-name',
+					placeholder: 'Имя контакта',
+					required: 'required',
+					'ng-model': 'contact.userData.name',
+					'ng-readonly': 'contact.readonly'
+				})
+			.form-group
+				label.h5(for="surname--input")
+					strong Фамилия
+				input.form-control(required)&attributes({
+					type: 'text',
+					name: 'contact-name',
+					id: 'contact-name',
+					placeholder: 'Фамилия контакта',
+					required: 'required',
+					'ng-model': 'contact.userData.surname',
+					'ng-readonly': 'contact.readonly'
+				})
+			div
+				p.h5
+					strong Контактная информация
+				.input-group.form-group
+					label.input-group-addon(for = "contact-email")
+						span.icon--email
+					input.form-control(required)&attributes({
+						type: 'email',
+						name: 'contact-email',
+						id: 'contact-email',
+						placeholder: 'yourmail@gmail.com',
+						'ng-model': 'contact.userData.email',
+						'ng-readonly': 'contact.readonly',
+						'ng-pattern': '/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm'
+					})
+				.input-group.form-group
+					label.input-group-addon(for = "contact-phone")
+						span.icon--phone
+					input.form-control&attributes({
+						type: 'tel',
+						name: 'contact-phone',
+						id: 'contact-phone',
+						placeholder: '+7 911 123 4566',
+						'ng-model': 'contact.userData.phone',
+						'ng-readonly': 'contact.readonly'
+					})

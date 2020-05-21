@@ -1,0 +1,27 @@
+
+<main ng-cloak="ng-cloak" class="contacts" ng-controller="ContactsController as contacts" data-ng-class="{'contacts--line' : contacts.grid.isActive('line'), 'contacts--grid' : contacts.grid.isActive('grid')}">
+  <loader-block ng-show="contacts.loading" ng-init="contacts.loader.show()"></loader-block>
+  <p ng-show="contacts.nodata" class="lead text-center">Нет данных</p>
+  <ul ng-show="contacts.ifData() &amp;&amp; contacts.grid.isActive('line')" class="contacts__list list--headings">
+    <li class="list__item item--num">
+      <button class="list__btn" role="button" ng-click="contacts.filter($event, 'num')">#</button>
+    </li>
+    <li class="list__item item--name"> 
+      <button class="list__btn" role="button" ng-click="contacts.filter($event, 'name')">Имя</button>
+    </li>
+    <li class="list__item item--surname"> 
+      <button class="list__btn" role="button" ng-click="contacts.filter($event, 'surname')">Фамилия</button>
+    </li>
+    <li class="list__item item--phone"> 
+      <button class="list__btn" role="button" ng-click="contacts.filter($event, 'phone')">Телефон</button>
+    </li>
+    <li class="list__item item--email"> 
+      <button class="list__btn" role="button" ng-click="contacts.filter($event, 'email')">E-mail</button>
+    </li>
+  </ul>
+  <div ng-show="contacts.ifData()" ng-init="contacts.getData()" class="data-container">
+    <ul class="contacts__list" ng-repeat="contact in contacts.data" ng-click="contacts.showContact( contact.$id )" id="{{contact.$id}}">
+      <contact-fields></contact-fields>
+    </ul>
+  </div>
+</main>

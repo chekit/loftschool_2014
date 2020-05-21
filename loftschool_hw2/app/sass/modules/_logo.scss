@@ -1,0 +1,13 @@
+/*** Logo Block (Start) ***/
+.logo {
+	&#{__link} {
+		display: inline-block;
+		height: inherit;
+	}
+
+	&#{__img} {
+		display: block;
+		height: 100%;
+	}
+}
+/*** Logo Block (End) ***/

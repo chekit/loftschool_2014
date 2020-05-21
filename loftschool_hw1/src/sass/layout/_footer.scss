@@ -1,0 +1,48 @@
+/*======================
+	FOOTER (START)
+=======================*/
+#footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: color('lightgrey');
+	border-top: 3px solid #1c667a;
+	height: map-get($footer-h, mobile);
+	text-align: center;
+
+	&:before {
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		height: 3px;
+		background: -moz-linear-gradient(left,  #f2f6fa 0%, #1c667a 50%, #f2f6fa 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f2f6fa), color-stop(50%,#1c667a), color-stop(100%,#f2f6fa)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* IE10+ */
+		background: linear-gradient(to right,  #f2f6fa 0%,#1c667a 50%,#f2f6fa 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6fa', endColorstr='#f2f6fa',GradientType=1 ); /* IE6-9 */
+		content: '';
+	}
+
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		height: map-get($footer-h, tablet);
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		height: map-get($footer-h, desktop);		
+	}
+}
+
+.footer__wrap {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+/*======================
+	FOOTER (END)
+=======================*/

@@ -1,0 +1,49 @@
+//Buttons
+%btn {
+	display: block;
+	background-color: rgba(255, 255, 255, .75);
+	border: 1px solid black;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	transition: background-color .25s ease-in-out;
+	outline: none;
+
+	&:hover {
+		background-color: #fff;
+	}
+}
+
+%btn--icon{
+	@extend %indent-text;
+	padding: 0;
+	border: none;
+	background: transparent url('../images/btn-icons.png') no-repeat 0 0;
+	outline: none;
+}
+
+%btn-function {
+	@extend %btn--icon;
+	width: 28px;
+	height: 25px;
+	outline: none;
+}
+
+//
+%indent-text {
+	overflow: hidden;
+	display: block;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+%clearfix {
+	&:after {
+		clear: both;
+		display: block;
+		width: 0;
+		height: 0;
+		visibility: hidden;
+		content: '';
+	}
+}

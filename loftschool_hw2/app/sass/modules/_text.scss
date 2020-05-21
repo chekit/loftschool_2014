@@ -1,0 +1,130 @@
+/*** text Styles (Start) ***/
+.h1 {
+	margin: 0 0 1em;
+	font: {
+		family: font(elektraLight), "Helvetica Neue",Helvetica,Arial,sans-serif; // elektraLightBold - упорно не хочет подключаться, так же как и Italic
+		size: 4.5rem;
+		weight: bold;
+	};
+	line-height: 1em;
+	text-align: center;
+}
+
+.h2 {
+	margin: 0 0 1em;
+	font: {
+		family: font(elektraLight), "Helvetica Neue",Helvetica,Arial,sans-serif; // elektraLightBold - упорно не хочет подключаться, так же как и Italic
+		size: 2.5rem;
+		weight: bold;
+	};
+	line-height: 1em;
+	text-align: center;
+
+	&#{__text} {
+		position: relative;
+		z-index: 10;
+		display: inline-block;
+		padding: 0 $padding*2.5;
+		background-color: white;
+	}
+
+	@at-root .content__block .h2 {
+		margin: 0 0 $margin;
+	}
+}
+
+.h2--block {
+	position: relative;
+	text-align: center;
+
+	&:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+		margin: auto;
+		width: 100%;
+		height: 0;
+		border-bottom: 1px solid color('darkblue');
+		content: '';
+	}
+}
+
+.text {
+	font-size: 1.4rem;
+	line-height: 20/14*1em;
+
+	@at-root .aside__contacts & {
+		padding: 0 0 0 $padding*2;
+		margin-bottom: $margin*1.5;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&#{__container} {
+		position: relative;
+
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 100%;
+			margin: 0 $margin*0.5 0 0;
+			width: 16px;
+			height: 22px;
+			background: {
+				color: transparent;
+				repeat: no-repeat;
+				position: left top; 
+			};
+			content: '';
+		}
+	}
+}
+
+.text--right {
+	text-align: right;
+}
+
+.text--center {
+	text-align: center;
+}
+
+.text--positive {
+	color: color('positive');
+}
+
+.text--error {
+	color: color('error');
+}
+
+.text--positive, .text--error {
+	margin: 0 0 1em;
+}
+
+.container--address:after {
+	background-image: url('../../app/images/address-icon.png');
+}
+
+.container--phone:after {
+	background-image: url('../../app/images/phone-icon.png');
+}
+
+.nav__h4 {
+	color: white;
+	font: {
+		family: font(elektraLightBold), "Helvetica Neue",Helvetica,Arial,sans-serif;
+		size: 1em;
+		weight: bold;
+	};
+}
+
+.filed--hint {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	display: none;
+}
+/*** text Styles (Start) ***/

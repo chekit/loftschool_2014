@@ -1,0 +1,17 @@
+AddDefaultCharset utf-8
+
+RewriteEngine On
+
+#Root file
+DirectorySlash On
+DirectoryIndex index.php
+RewriteBase /
+
+#301 redirect to domain without 'www.'
+RewriteCond %{HTTP_HOST} ^www\.acherepov\.ru$ [NC]
+RewriteRule ^(.*)$ http://acherepov.ru/$1 [R=301,NC]
+
+#hide file .php extension
+RewriteCond %{REQUEST_fileNAME} !-d
+RewriteCond %{REQUEST_fileNAME} !-f
+RewriteRule ^(([^/]+/)*[^./]+)$ /$1.php [L]

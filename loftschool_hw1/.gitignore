@@ -1,0 +1,12 @@
+#Dirrectories
+bower_components/
+node_modules/
+__node_modules/
+vendor/
+dist/plugins/
+#Files
+.sublime-gulp.cache
+sublime-gulp.log
+gulpfile_.js
+composer
+composer.lock

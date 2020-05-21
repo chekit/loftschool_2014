@@ -1,0 +1,103 @@
+.btn {
+	@extend %btn;
+
+	&--cell {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		text-indent: -9999px;
+		border: none;
+		cursor: pointer;
+	
+		&:hover {
+			background-color: #c7ccd2;
+		}
+	}
+
+
+	&:hover {
+		color: color('light-grey');
+	}
+
+	&--upload {
+		@extend %btn--red;
+		float: right;
+		overflow: hidden;
+		width: 37px;
+		height: 25px;
+		text-indent: -9999px;
+		background-image: url('../images/download-icon.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		border-radius: 0 3px 3px 0;
+
+		&:hover {
+			opacity: .8;
+		}
+
+		@at-root .loaded & {
+			@extend %btn--grey;
+		}
+	}
+
+	&--reset {
+		@extend %btn--grey;
+		@extend %btn--from-send;
+		float: left;
+	}
+
+	&--submit {
+		@extend %btn--red;
+		@extend %btn--from-send;
+		float: right;
+	}
+
+	&--four-marks {
+		@extend %btn--app-type;
+	  	background-position: -37px 0px;
+
+	 	&:hover {
+			background-position: -77px 0px; 
+	  	}
+
+		&.btn--active,
+		&:active {
+			background-position: -57px 0px; 
+		}
+	}
+
+	&--one-mark {
+		@extend %btn--app-type;
+		background-position: -37px -26px;
+	 	
+	 	&:hover {
+			background-position: -77px -26px;
+	  	}
+
+		&.btn--active,
+		&:active {
+			background-position: -57px -26px; 
+		}
+	}
+
+	&--up {
+		@extend %btn--control;
+		top: 5px;
+
+		&:hover {
+			background-position: -19px -21px;
+		}
+	}
+
+	&--down {
+		@extend %btn--control;
+		bottom: 5px;
+		background-position: 0 -51px;
+
+		&:hover {
+			background-position: -19px -51px;
+		}
+	}
+}

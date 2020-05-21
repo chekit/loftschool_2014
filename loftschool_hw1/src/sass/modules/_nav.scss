@@ -1,0 +1,144 @@
+/*======================
+	NAVIGATION (START)
+=======================*/
+.main-nav {
+	box-shadow: 0 4px 9px 0 rgba(88, 105, 122, .59);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	display: none;
+	margin-top: -15px;
+	width: 100%;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		left: 100%;
+		margin: -60px 0 0 -240px;
+		width: 238px;
+		border-radius: 5px;
+		
+		&:before,
+		&:after {
+			position: absolute;
+			bottom: 100%;
+			right: 40px;
+			z-index: 10;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 15px 15px 15px;
+			border-color: transparent transparent color('lightgrey') transparent;
+			content: '';
+		}
+		
+		&:after {
+			z-index: 5;
+			border-color: transparent transparent black transparent;
+		}
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		box-shadow: none;
+		top: 15px;
+		left: 0;
+		display: block;
+		margin: 0;
+		width: (258/960)*100%;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	&.main-nav--visible {
+		display: block;
+	}
+}
+
+.nav-list {
+	overflow: hidden;
+	width: 100%;
+	background-color: color('lightgrey');
+	font-size: 2.4rem;
+	line-height: 1.67em;
+	text-align: center;
+
+	@media screen and (min-width: breakpoint(tablet)) {
+		border-radius: 5px;
+		font-size: 2rem;
+		line-height: 3.36em;
+		text-align: left;
+	}
+
+	@media screen and (min-width: breakpoint(desktop)) {
+		font-size: 2.2rem;
+		text-align: left;
+	}
+
+	&#{__item} {
+		position: relative;
+		display: block;
+		color: color('grey');
+		border-top: 1px solid color('grey');
+
+		&:hover {
+			background-color: color('lightcyan');
+		}
+
+		&:first-child {
+			border-top: none;
+		}
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			margin: 0 0 -2px;
+			border-top: none;
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			border-top: none;
+		}
+	}
+
+	&#{__link} {
+		box-sizing: border-box;
+		display: block;
+		margin: 0 2.5%;
+		width: 95%;
+		height: 100%;
+		color: color('grey');
+		text-decoration: none;
+		background-color: transparent;
+		transition: color .125s ease-in-out;
+
+		&:hover,
+		&:active {
+			// background-color: color('lightcyan');
+			color: white;
+			border-bottom-color: transparent;
+		}
+
+		@media screen and (min-width: breakpoint(tablet)) {
+			padding: 0 (22/237)*100%;
+			border-bottom: 2px solid color('darkblue');
+		}
+
+		@media screen and (min-width: breakpoint(desktop)) {
+			padding: 0 (28/258)*100%;
+		}
+
+	}
+}
+
+.nav-list__item.item--active,
+.item--active .nav-list__link {
+	background-color: color('lightcyan');
+}
+
+.item--active .nav-list__link {
+	border-bottom-color: transparent;
+	color: white;
+}
+/*======================
+	NAVIGATION (END)
+=======================*/

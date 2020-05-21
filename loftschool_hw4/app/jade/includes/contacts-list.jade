@@ -1,0 +1,40 @@
+main.contacts(ng-cloak)&attributes({
+		'ng-controller' : "ContactsController as contacts",
+		'data-ng-class' : "{'contacts--line' : contacts.grid.isActive('line'), 'contacts--grid' : contacts.grid.isActive('grid')}"
+	})
+	loader-block(ng-show="contacts.loading", ng-init="contacts.loader.show()")
+	p.lead.text-center(ng-show="contacts.nodata") Нет данных
+	ul.contacts__list.list--headings(ng-show="contacts.ifData() && contacts.grid.isActive('line')")
+		li.list__item.item--num
+			button.list__btn&attributes({
+				role: 'button',
+				'ng-click': "contacts.filter($event, 'num')"
+			}) #
+		li.list__item.item--name 
+			button.list__btn&attributes({
+				role: 'button',
+				'ng-click': "contacts.filter($event, 'name')"
+			}) Имя
+		li.list__item.item--surname 
+			button.list__btn&attributes({
+				role: 'button',
+				'ng-click': "contacts.filter($event, 'surname')"
+			}) Фамилия
+		li.list__item.item--phone 
+			button.list__btn&attributes({
+				role: 'button',
+				'ng-click': "contacts.filter($event, 'phone')"
+			}) Телефон
+		li.list__item.item--email 
+			button.list__btn&attributes({
+				role: 'button',
+				'ng-click': "contacts.filter($event, 'email')"
+			}) E-mail
+	//- +users-list(8)
+	.data-container(ng-show="contacts.ifData()", ng-init="contacts.getData()")
+		ul.contacts__list&attributes({
+			'ng-repeat': "contact in contacts.data",
+			'ng-click': 'contacts.showContact( contact.$id )',
+			id: '{{contact.$id}}'
+		})
+			contact-fields

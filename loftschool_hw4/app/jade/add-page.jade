@@ -1,0 +1,65 @@
+1extends tmpls/_tmpl
+
+block append config
+	- var pageTitle = "Добавить Контакт"
+
+block content
+	.container
+		header.page-header
+			h1.h3.text-uppercase.text-center
+				strong Контакт
+		.functions
+			a.btn--back&attributes({href: 'index.html'}) Назад
+		main.contacts
+			form.contacts__add-form&attributes({
+				method: 'post',
+				action: '#'
+			})
+				fieldset.add-form__block.block--avatar
+					.add-form__avatar
+						img.avatar__image(src="images/thumb-big.jpg", alt="")
+					.add-form__send
+						button.btn.btn-default.btn--submit(type="submit") Сохранить
+						button.btn.btn-default.btn-delete(type="reset") Удалить
+				fieldset.add-form__block.block--inputs
+					.form-group
+						label.h5(for="contact-name")
+							strong Имя 
+						input.form-control&attributes({
+							type: 'text',
+							name: 'contact-name',
+							id: 'contact-name',
+							placeholder: 'Имя контакта',
+							required: 'required'
+						})
+					.form-group
+						label.h5(for="surname--input")
+							strong Фамилия
+						input.form-control&attributes({
+							type: 'text',
+							name: 'contact-name',
+							id: 'contact-name',
+							placeholder: 'Фамилия контакта',
+							required: 'required'
+						})
+					div
+						p.h5
+							strong Контактаня информация
+						.input-group.form-group
+							label.input-group-addon(for = "contact-email")
+								span.icon--email
+							input.form-control(required)&attributes({
+								type: 'email',
+								name: 'contact-email',
+								id: 'contact-email',
+								placeholder: 'yourmail@gmail.com'
+							})
+						.input-group.form-group
+							label.input-group-addon(for = "contact-phone")
+								span.icon--phone
+							input.form-control&attributes({
+								type: 'tel',
+								name: 'contact-phone',
+								id: 'contact-phone',
+								placeholder: '+7 911 123 4566'
+							})

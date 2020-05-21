@@ -1,0 +1,35 @@
+
+<main class="contacts">
+  <form novalidate="novalidate" class="contacts__add-form" ng-controller="AddController as AddCtrl" ng-submit="addContactForm.$valid && AddCtrl.pushContact(AddCtrl.contact, addContactForm)" name="addContactForm">
+    <p ng-show="addContactForm.$invalid &amp;&amp; AddCtrl.error" class="delete-success text-center">Данные контакта указаны неверно</p>
+    <p ng-show="AddCtrl.added" class="submit-success error-text text-center">Контакт добавлен</p>
+    <fieldset class="add-form__block block--avatar">
+      <div class="add-form__avatar"><img src="images/thumb-big.jpg" alt="" class="avatar__image"/></div>
+      <div class="add-form__send">
+        <button class="btn btn-default btn--submit" type="submit" ng-click="AddCtrl.submitError(addContactForm)">Сохранить</button>
+        <button class="btn btn-default btn-delete" type="reset" ng-click="AddCtrl.resetContact(addContactForm)">Отмена</button>
+      </div>
+    </fieldset>
+    <fieldset class="add-form__block block--inputs">
+      <div class="form-group">
+        <label for="contact-name" class="h5"><strong>Имя </strong></label>
+        <input required="required" class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Имя контакта" ng-model="AddCtrl.contact.name"/>
+      </div>
+      <div class="form-group">
+        <label for="surname--input" class="h5"><strong>Фамилия</strong></label>
+        <input required="required" class="form-control" type="text" name="contact-name" id="contact-name" placeholder="Фамилия контакта" ng-model="AddCtrl.contact.surname"/>
+      </div>
+      <div>
+        <p class="h5"><strong>Контактаня информация</strong></p>
+        <div class="input-group form-group">
+          <label for="contact-email" class="input-group-addon"><span class="icon--email"></span></label>
+          <input required="required" class="form-control" type="email" name="contact-email" id="contact-email" placeholder="yourmail@gmail.com" ng-model="AddCtrl.contact.email" ng-pattern="/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm"/>
+        </div>
+        <div class="input-group form-group">
+          <label for="contact-phone" class="input-group-addon"><span class="icon--phone"></span></label>
+          <input class="form-control" type="tel" name="contact-phone" id="contact-phone" placeholder="+7 911 123 4566" ng-model="AddCtrl.contact.phone"/>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</main>

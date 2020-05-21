@@ -1,0 +1,17 @@
+.generator__settings {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	background: #f1f1f5;
+	box-sizing: border-box;
+	border-left: 1px solid #b4b2b3;
+	float: left;
+	height: 670px;
+	padding: 27px 0 25px 0;
+	width: $w-g-s;
+
+
+	.form__block--position & {
+		margin-right: 77px;
+	}
+}

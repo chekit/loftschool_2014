@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Мои работы</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, minimal-ui, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1" />
+        <!-- favicons --> 
+        <link rel="shortcut icon" href="images/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="msapplication-TileImage" content="images/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+        <!-- /favicons --> 
+
+        <link rel="stylesheet" href="css/styles.min.css">
+        <script src="js/libs/modernizr.min.js"></script>
+        
+        <!--[if lt IE 9]>
+            <script src="js/libs/html5shiv.min.js"></script>
+            <link rel="stylesheet" href="css/styles.ie.min.css">
+        <![endif]-->
+    </head>
+    <body>
+        <div class="popup-container container--none">
+            <div class="popup">
+                <div class="info-block">
+                    <div class="block__header2 header--bg">
+                        <span class="header__text">Добавление проекта</span>
+                        <button class="popup__close-btn">Закрыть окно</button>
+                    </div>
+                        <div class="block__wrap">
+                            <div class="block__info add--form">
+                                <form action="#" class="form-block" method="post">
+                                    <fieldset class="form-block__item">
+                                        <div class="item__wrap">
+                                            <label for="proj-name" class="form-block__label">Название проекта</label>
+                                            <div class="wrap__field">
+                                                <input type="text" id="proj-name" name="proj-name" class="form-block__field" placeholder="Введите название" tabindex="1" data-val="Название проекта" autofocus required />
+                                            </div>
+                                        </div>
+                                        <div class="item__wrap">
+                                            <label for="proj-img" class="form-block__label">Картинка проекта</label>
+                                            <div class="wrap__field field--upload">
+                                                <div class="field__style-upload">
+                                                    <div class="form-block__field style-upload__input" data-val="Картинка проекта">Загрузить файл...</div>
+                                                    <div class="style-upload__btn">Загрузить картинку</div>
+                                                </div>
+                                                <input type="file" id="proj-img" name="proj-img" placeholder="Загрузите изображение" class="form-block__field field--upload js-upload-file" tabindex="2" data-val="Картинка проекта" required />
+                                            </div>
+                                        </div>
+                                        <div class="item__wrap">
+                                            <label for="proj-url" class="form-block__label">URL проекта</label>
+                                            <div class="wrap__field">
+                                                <input type="email" id="proj-url" name="proj-url" placeholder="Добавьте ссылку" class="form-block__field" tabindex="2" data-val="URL проекта" required />
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <fieldset class="form-block__item">
+                                        <label class="form-block__label" for="proj-description">Описание</label>
+                                        <div class="wrap__field">
+                                            <textarea name="proj-description" id="proj-description" class="form-block__field field--textarea" placeholder="Пара слов о Вашем проекте" data-val="Описание" tabindex="3" required></textarea>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-block__item item--buttons item--center">
+                                        <button type="submit" class="form-block__btn btn--blue">Добавить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="popup-container__bg"></div>
+        </div>
+        <header id="header" class="gradient">
+            <div class="header__wrap">
+                <div class="header__logo">
+                    <h1 class="logo__header1">
+                        <a href="/" class="logo__link">Loftschool - комплексное обучение web разработке</a>
+                    </h1>
+                </div><!--/end .header__logo -->
+                <ul class="socials-list">
+                    <li class="socials-list__item"><a href="http://vk.com/chekit" class="item__link item__link--vk" target="_blank">Вконтакте</a></li>
+                    <li class="socials-list__item"><a href="http://twitter.com/che_kit" class="item__link item__link--tw" target="_blank">Twitter</a></li>
+                    <li class="socials-list__item"><a href="http://facebook.com/chekitdnb" class="item__link item__link--fb" target="_blank">Facebook</a></li>
+                    <li class="socials-list__item"><a href="http://github.com/chekit" class="item__link item__link--gh" target="_blank">Github</a></li>
+                </ul><!--/end .socials-list -->
+                <button class="header__show-menu-btn">Меню</button>
+            </div>
+        </header><!--/end #header -->
+        <main id="wrap">
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="index.html" class="nav-list__link">Обо мне</a></li>
+                    <li class="nav-list__item item--active"><a href="#" class="nav-list__link">Мои работы</a></li>
+                    <li class="nav-list__item"><a href="feedback.html" class="nav-list__link">Связаться со мной</a></li>
+                </ul>
+            </nav><!--/end .main-nav -->
+            <article class="info-block">
+                <h2 class="block__header2">Мои работы</h2>
+                <div class="block__wrap">
+                    <div class="block__info info--portfolio">
+                        <div class="portfolio__preview">
+                            <h3 class="portfolio__item-name"><a href="#" class="item-name__text">Родовое дерево</a></h3>
+                            <img src="images/portfolio/rodovoe-derevo.jpg" alt="Родовое Дерево" class="preview__img">
+                        </div>
+                        <p class="block__text text--small">
+                            <a href="#" class="text__link text--italic" target="_blank">www.rodovoederevo.ru</a>
+                        </p>
+                        <p class="block__text">Социальная сеть...</p>
+                    </div>
+                    <div class="block__info info--portfolio">
+                        <div class="portfolio__preview">
+                            <h3 class="portfolio__item-name"><a href="#" class="item-name__text">Mainbox</a></h3>
+                            <img src="images/portfolio/mainbox.jpg" alt="Mainbox" class="preview__img">
+                        </div>
+                        <p class="block__text text--small">
+                            <a href="http://mainbox.com" class="text__link text--italic" target="_blank">www.mainbox.com</a>
+                        </p>
+                        <p class="block__text">Сервис доставки товаров</p>
+                    </div>
+                    <div class="block__info info--portfolio">
+                        <div class="portfolio__preview">
+                            <h3 class="portfolio__item-name"><a href="#" class="item-name__text">Allareas</a></h3>
+                            <img src="images/portfolio/allareas.jpg" alt="Сайт 1" class="preview__img">
+                        </div>
+                        <p class="block__text text--small">
+                            <a href="http://artwonder.ru/projects/allareas/" class="text__link text--italic" target="_blank">www.allareas.ru</a>
+                        </p>
+                        <p class="block__text">Сервис покупки билетов (не взлетел)</p>
+                    </div>
+                    <div class="block__info info--portfolio">
+                        <div class="portfolio__preview">
+                            <h3 class="portfolio__item-name"><a href="#" class="item-name__text">CastingMedia</a></h3>
+                            <img src="images/portfolio/castingmedia.jpg" alt="Сайт 1" class="preview__img">
+                        </div>
+                        <p class="block__text text--small">
+                            <a href="http://castingmedia.ru/" class="text__link text--italic" target="_blank">www.castingmedia.ru</a>
+                        </p>
+                        <p class="block__text">Агентство Casting Media</p>
+                    </div>
+                    <div class="block__info info--portfolio info--add">
+                        <button class="add-proj-btn js-add-proj"><span class="add-proj-btn__text">Добавить проект</span></button>
+                    </div>
+                </div>
+            </article><!--/end .info-block -->
+            <article class="info-block info-block--contacts">
+                <h2 class="block__header2 header--contacts">Контакты</h2>
+                <ul class="block__wrap">
+                    <li class="contacts__item item--mail"><a href="mailto:chekitdnb@gmail.com" class="item__text text--dark_white">chekitdnb@gmail.com</a></li>
+                    <li class="contacts__item item--phone"><a href="tel://8-916-436-7142" class="item__text text--dark_white">+79164367142</a></li>
+                    <li class="contacts__item item--skype"><a href="skype:chekit_t?chat" class="item__text text--dark_white">chekit_t</a></li>
+                </ul>
+            </article><!--/end .contacts -->
+            <ul class="socials-list">
+                <li class="socials-list__item"><a href="#" class="item__link item__link--vk">Вконтакте</a></li>
+                <li class="socials-list__item"><a href="#" class="item__link item__link--tw">Twitter</a></li>
+                <li class="socials-list__item"><a href="#" class="item__link item__link--fb">Facebook</a></li>
+                <li class="socials-list__item"><a href="#" class="item__link item__link--gh">Gihub</a></li>
+            </ul><!--/end .socials-list -->
+        </main>
+        <footer id="footer" class="gradient">
+            <div class="footer__wrap">
+                <p class="footer__text">&copy;&nbsp;2014, Это мой сайт, пожалуйста, не&nbsp;копируйте и&nbsp;не&nbsp;воруйте его</p>
+            </div>
+        </footer><!--/end #footer -->
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/libs/jquery.min.js" type="text/javascript"><\/script>')</script>
+        <script src="js/scripts.min.js"></script>
+
+        <!--[if lt IE 9]>
+            <script src="js/libs/jquery.placeholder.min.js"></script>
+            <script>
+                $(function () {
+                    $('input, textarea').placeholder();
+                });
+            </script>
+        <![endif]-->
+    </body>
+</html>

@@ -1,0 +1,66 @@
+main.contacts
+	form.contacts__add-form(novalidate)&attributes({
+		'ng-controller': 'AddController as AddCtrl',
+		'ng-submit': 'addContactForm.$valid && AddCtrl.pushContact(AddCtrl.contact, addContactForm)',
+		'name': 'addContactForm'
+	})
+		p.delete-success.text-center(ng-show = "addContactForm.$invalid && AddCtrl.error") Данные контакта указаны неверно
+		p.submit-success.error-text.text-center(ng-show = "AddCtrl.added") Контакт добавлен
+		fieldset.add-form__block.block--avatar
+			.add-form__avatar
+				img.avatar__image(src="images/thumb-big.jpg", alt="")
+			.add-form__send
+				button.btn.btn-default.btn--submit&attributes({
+					type: "submit",
+					'ng-click': 'AddCtrl.submitError(addContactForm)'
+				}) Сохранить
+				button.btn.btn-default.btn-delete&attributes({
+					'type': 'reset',
+					'ng-click': 'AddCtrl.resetContact(addContactForm)',
+				}) Отмена
+		fieldset.add-form__block.block--inputs
+			.form-group
+				label.h5(for="contact-name")
+					strong Имя 
+				input.form-control(required)&attributes({
+					type: 'text',
+					name: 'contact-name',
+					id: 'contact-name',
+					placeholder: 'Имя контакта',
+					'ng-model': 'AddCtrl.contact.name'
+				})
+			.form-group
+				label.h5(for="surname--input")
+					strong Фамилия
+				input.form-control(required)&attributes({
+					type: 'text',
+					name: 'contact-name',
+					id: 'contact-name',
+					placeholder: 'Фамилия контакта',
+					'ng-model': 'AddCtrl.contact.surname'
+				})
+			div
+				p.h5
+					strong Контактаня информация
+				.input-group.form-group
+					label.input-group-addon(for = "contact-email")
+						span.icon--email
+					input.form-control(required)&attributes({
+						type: 'email',
+						name: 'contact-email',
+						id: 'contact-email',
+						placeholder: 'yourmail@gmail.com',
+						'ng-model': 'AddCtrl.contact.email',
+						'ng-pattern': '/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm'
+						//- 'ng-disabled': 'addContactForm.$submitted'
+					})
+				.input-group.form-group
+					label.input-group-addon(for = "contact-phone")
+						span.icon--phone
+					input.form-control&attributes({
+						type: 'tel',
+						name: 'contact-phone',
+						id: 'contact-phone',
+						placeholder: '+7 911 123 4566',
+						'ng-model': 'AddCtrl.contact.phone'
+					})
